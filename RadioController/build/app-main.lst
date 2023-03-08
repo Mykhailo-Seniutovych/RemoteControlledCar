@@ -1,0 +1,160 @@
+ARM GAS  C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"app-main.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/app-main.cpp"
+  18              		.section	.text._ZN13LedController9toggleLedEv,"axG",%progbits,_ZN13LedController9toggleLedEv,comda
+  19              		.align	1
+  20              		.weak	_ZN13LedController9toggleLedEv
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	_ZN13LedController9toggleLedEv:
+  26              		.fnstart
+  27              	.LFB65:
+   1:Core/Src/app-main.cpp **** #include "app-main.h"
+   2:Core/Src/app-main.cpp **** #include "stm32f1xx_hal.h"
+   3:Core/Src/app-main.cpp **** 
+   4:Core/Src/app-main.cpp **** #define LED_PORT GPIOC
+   5:Core/Src/app-main.cpp **** #define LED_PIN GPIO_PIN_13
+   6:Core/Src/app-main.cpp **** 
+   7:Core/Src/app-main.cpp **** class LedController {
+   8:Core/Src/app-main.cpp ****   public:
+   9:Core/Src/app-main.cpp ****     void toggleLed() {
+  28              		.loc 1 9 10
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 1, uses_anonymous_args = 0
+  32 0000 80B5     		push	{r7, lr}
+  33              		.save {r7, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 7, -8
+  37              		.cfi_offset 14, -4
+  38              		.pad #8
+  39 0002 82B0     		sub	sp, sp, #8
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 16
+  42              		.setfp r7, sp, #0
+  43 0004 00AF     		add	r7, sp, #0
+  44              	.LCFI2:
+  45              		.cfi_def_cfa_register 7
+  46 0006 7860     		str	r0, [r7, #4]
+  10:Core/Src/app-main.cpp ****         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+  47              		.loc 1 10 27
+  48 0008 4FF40051 		mov	r1, #8192
+ARM GAS  C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s 			page 2
+
+
+  49 000c 0348     		ldr	r0, .L2
+  50 000e FFF7FEFF 		bl	HAL_GPIO_TogglePin
+  11:Core/Src/app-main.cpp ****     }
+  51              		.loc 1 11 5
+  52 0012 00BF     		nop
+  53 0014 0837     		adds	r7, r7, #8
+  54              	.LCFI3:
+  55              		.cfi_def_cfa_offset 8
+  56 0016 BD46     		mov	sp, r7
+  57              	.LCFI4:
+  58              		.cfi_def_cfa_register 13
+  59              		@ sp needed
+  60 0018 80BD     		pop	{r7, pc}
+  61              	.L3:
+  62 001a 00BF     		.align	2
+  63              	.L2:
+  64 001c 00100140 		.word	1073811456
+  65              		.cfi_endproc
+  66              	.LFE65:
+  67              		.fnend
+  69              		.section	.text.appMain,"ax",%progbits
+  70              		.align	1
+  71              		.global	appMain
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  76              	appMain:
+  77              		.fnstart
+  78              	.LFB66:
+  12:Core/Src/app-main.cpp **** };
+  13:Core/Src/app-main.cpp **** 
+  14:Core/Src/app-main.cpp **** int appMain() {
+  79              		.loc 1 14 15
+  80              		.cfi_startproc
+  81              		@ args = 0, pretend = 0, frame = 8
+  82              		@ frame_needed = 1, uses_anonymous_args = 0
+  83 0000 80B5     		push	{r7, lr}
+  84              		.save {r7, lr}
+  85              	.LCFI5:
+  86              		.cfi_def_cfa_offset 8
+  87              		.cfi_offset 7, -8
+  88              		.cfi_offset 14, -4
+  89              		.pad #8
+  90 0002 82B0     		sub	sp, sp, #8
+  91              	.LCFI6:
+  92              		.cfi_def_cfa_offset 16
+  93              		.setfp r7, sp, #0
+  94 0004 00AF     		add	r7, sp, #0
+  95              	.LCFI7:
+  96              		.cfi_def_cfa_register 7
+  97              	.L5:
+  15:Core/Src/app-main.cpp ****     auto ledController = LedController();
+  16:Core/Src/app-main.cpp ****     while (true) {
+  17:Core/Src/app-main.cpp ****         ledController.toggleLed();
+  98              		.loc 1 17 32
+  99 0006 3B1D     		adds	r3, r7, #4
+ 100 0008 1846     		mov	r0, r3
+ARM GAS  C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s 			page 3
+
+
+ 101 000a FFF7FEFF 		bl	_ZN13LedController9toggleLedEv
+  18:Core/Src/app-main.cpp ****         HAL_Delay(200);
+ 102              		.loc 1 18 18
+ 103 000e C820     		movs	r0, #200
+ 104 0010 FFF7FEFF 		bl	HAL_Delay
+  17:Core/Src/app-main.cpp ****         HAL_Delay(200);
+ 105              		.loc 1 17 32
+ 106 0014 F7E7     		b	.L5
+ 107              		.cfi_endproc
+ 108              	.LFE66:
+ 109              		.fnend
+ 111              		.text
+ 112              	.Letext0:
+ 113              		.file 2 "c:\\program files (custom)\\arm-gnu-toolchain\\arm-none-eabi\\include\\machine\\_default_
+ 114              		.file 3 "c:\\program files (custom)\\arm-gnu-toolchain\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 115              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 116              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 117              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 app-main.cpp
+C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s:19     .text._ZN13LedController9toggleLedEv:00000000 $t
+C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s:25     .text._ZN13LedController9toggleLedEv:00000000 _ZN13LedController9toggleLedEv
+C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s:64     .text._ZN13LedController9toggleLedEv:0000001c $d
+.ARM.extab.text._ZN13LedController9toggleLedEv:00000000 $d
+.ARM.exidx.text._ZN13LedController9toggleLedEv:00000000 $d
+C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s:70     .text.appMain:00000000 $t
+C:\Users\MYKHAI~1.SEN\AppData\Local\Temp\cc5VTAmS.s:76     .text.appMain:00000000 appMain
+          .ARM.extab.text.appMain:00000000 $d
+          .ARM.exidx.text.appMain:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_TogglePin
+__aeabi_unwind_cpp_pr1
+HAL_Delay

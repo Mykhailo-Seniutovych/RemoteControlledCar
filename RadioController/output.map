@@ -1,0 +1,876 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o (exit)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o) (__stdio_exit_handler)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o) (_fwalk_sglue)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o) (__sread)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o (memset)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o) (_close_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o) (errno)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o) (_impure_ptr)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o) (_lseek_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o) (_read_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o) (_write_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o (__libc_init_array)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o) (__call_exitprocs)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o) (atexit)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o) (_free_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o) (_malloc_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o) (__malloc_lock)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o) (_fclose_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o) (__sflush_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o) (_sbrk_r)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o) (__libc_fini_array)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o) (sysconf)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o) (__register_exitproc)
+c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+                              c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o) (__errno)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libstdc++.a
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libm.a
+START GROUP
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libgcc.a
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a
+END GROUP
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+LOAD c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+                [!provide]                PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x8000))
+                0x00008000                . = SEGMENT_START ("text-segment", 0x8000)
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn        0x00008000        0x0
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+                [!provide]                PROVIDE (__rel_iplt_start = .)
+ *(.rel.iplt)
+ .rel.iplt      0x00008000        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+                [!provide]                PROVIDE (__rel_iplt_end = .)
+
+.rela.dyn       0x00008000        0x0
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                PROVIDE (__rela_iplt_end = .)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init           0x00008000        0xc
+ *(SORT_NONE(.init))
+ .init          0x00008000        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+                0x00008000                _init
+ .init          0x00008004        0x8 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+
+.plt
+ *(.plt)
+
+.iplt           0x0000800c        0x0
+ *(.iplt)
+ .iplt          0x0000800c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+
+.text           0x0000800c     0x13c8
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ .text.exit     0x0000800c       0x1c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+                0x0000800c                exit
+ *(.text.startup .text.startup.*)
+ .text.startup.register_fini
+                0x00008028       0x14 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000803c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+ .text          0x0000803c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.deregister_tm_clones
+                0x0000803c       0x1c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.register_tm_clones
+                0x00008058       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.__do_global_dtors_aux
+                0x0000807c       0x28 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text.frame_dummy
+                0x000080a4       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .text          0x000080c8       0x7c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+                0x000080c8                _stack_init
+                0x000080d0                _start
+                0x000080d0                _mainCRTStartup
+ .text          0x00008144        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+ .text          0x00008144        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .text.stdio_exit_handler
+                0x00008144       0x18 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .text.cleanup_stdio
+                0x0000815c       0x40 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .text.__fp_lock
+                0x0000819c       0x1c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .text.__fp_unlock
+                0x000081b8       0x1c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .text.global_stdio_init.part.0
+                0x000081d4       0xf0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .text.__sfp    0x000082c4       0xc0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x000082c4                __sfp
+ .text.__sinit  0x00008384       0x3c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x00008384                __sinit
+ .text.__sfp_lock_acquire
+                0x000083c0        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x000083c0                __sfp_lock_acquire
+ .text.__sfp_lock_release
+                0x000083cc        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x000083cc                __sfp_lock_release
+ .text.__fp_lock_all
+                0x000083d8       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x000083d8                __fp_lock_all
+ .text.__fp_unlock_all
+                0x000083fc       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x000083fc                __fp_unlock_all
+ .text          0x00008420        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+ .text._fwalk_sglue
+                0x00008420       0x44 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+                0x00008420                _fwalk_sglue
+ .text          0x00008464        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+ .text.__sread  0x00008464       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+                0x00008464                __sread
+ .text.__seofread
+                0x00008488        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+                0x00008488                __seofread
+ .text.__swrite
+                0x0000848c       0x40 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+                0x0000848c                __swrite
+ .text.__sseek  0x000084cc       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+                0x000084cc                __sseek
+ .text.__sclose
+                0x000084f0        0x8 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+                0x000084f0                __sclose
+ .text          0x000084f8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+ .text.memset   0x000084f8       0xa0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+                0x000084f8                memset
+ .text          0x00008598        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+ .text._close_r
+                0x00008598       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+                0x00008598                _close_r
+ .text          0x000085bc        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+ .text._reclaim_reent
+                0x000085bc       0x5c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+                0x000085bc                _reclaim_reent
+ .text          0x00008618        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+ .text          0x00008618        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+ .text._lseek_r
+                0x00008618       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+                0x00008618                _lseek_r
+ .text          0x00008644        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+ .text._read_r  0x00008644       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+                0x00008644                _read_r
+ .text          0x00008670        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+ .text._write_r
+                0x00008670       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+                0x00008670                _write_r
+ .text          0x0000869c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+ .text.__libc_init_array
+                0x0000869c       0x50 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+                0x0000869c                __libc_init_array
+ .text          0x000086ec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+ .text.__retarget_lock_init
+                0x000086ec        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x000086ec                __retarget_lock_init
+ .text.__retarget_lock_init_recursive
+                0x000086f0        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x000086f0                __retarget_lock_init_recursive
+ .text.__retarget_lock_close
+                0x000086f4        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x000086f4                __retarget_lock_close
+ .text.__retarget_lock_close_recursive
+                0x000086f8        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x000086f8                __retarget_lock_close_recursive
+ .text.__retarget_lock_acquire
+                0x000086fc        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x000086fc                __retarget_lock_acquire
+ .text.__retarget_lock_acquire_recursive
+                0x00008700        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00008700                __retarget_lock_acquire_recursive
+ .text.__retarget_lock_try_acquire
+                0x00008704        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00008704                __retarget_lock_try_acquire
+ .text.__retarget_lock_try_acquire_recursive
+                0x00008708        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00008708                __retarget_lock_try_acquire_recursive
+ .text.__retarget_lock_release
+                0x0000870c        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x0000870c                __retarget_lock_release
+ .text.__retarget_lock_release_recursive
+                0x00008710        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00008710                __retarget_lock_release_recursive
+ .text          0x00008714        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x00008714       0xc4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+                0x00008714                __call_exitprocs
+ .text          0x000087d8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+ .text.atexit   0x000087d8        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+                0x000087d8                atexit
+ .text          0x000087e4        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+ .text._malloc_trim_r
+                0x000087e4       0xb8 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+                0x000087e4                _malloc_trim_r
+ .text._free_r  0x0000889c      0x1f8 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+                0x0000889c                _free_r
+ .text          0x00008a94        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+ .text._malloc_r
+                0x00008a94      0x568 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00008a94                _malloc_r
+ .text          0x00008ffc        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+ .text.__malloc_lock
+                0x00008ffc        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+                0x00008ffc                __malloc_lock
+ .text.__malloc_unlock
+                0x00009008        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+                0x00009008                __malloc_unlock
+ .text          0x00009014        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+ .text._fclose_r
+                0x00009014       0xc4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+                0x00009014                _fclose_r
+ .text.fclose   0x000090d8       0x10 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+                0x000090d8                fclose
+ .text          0x000090e8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+ .text.__sflush_r
+                0x000090e8      0x128 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+                0x000090e8                __sflush_r
+ .text._fflush_r
+                0x00009210       0x54 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+                0x00009210                _fflush_r
+ .text.fflush   0x00009264       0x74 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+                0x00009264                fflush
+ .text          0x000092d8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+ .text._sbrk_r  0x000092d8       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+                0x000092d8                _sbrk_r
+ .text          0x000092fc        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+ .text.__libc_fini_array
+                0x000092fc       0x28 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+                0x000092fc                __libc_fini_array
+ .text          0x00009324        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+ .text.sysconf  0x00009324       0x1c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+                0x00009324                sysconf
+ .text          0x00009340        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+ .text.__register_exitproc
+                0x00009340       0x88 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+                0x00009340                __register_exitproc
+ .text          0x000093c8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+ .text.__errno  0x000093c8        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+                0x000093c8                __errno
+ .text          0x000093d4        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+ .text          0x000093d4        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x000093d4        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x000093d4        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x000093d4        0x0 linker stubs
+ *(.v4_bx)
+ .v4_bx         0x000093d4        0x0 linker stubs
+
+.fini           0x000093d4        0xc
+ *(SORT_NONE(.fini))
+ .fini          0x000093d4        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+                0x000093d4                _fini
+ .fini          0x000093d8        0x8 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+                [!provide]                PROVIDE (__etext = .)
+                [!provide]                PROVIDE (_etext = .)
+                [!provide]                PROVIDE (etext = .)
+
+.rodata         0x000093e0       0x48
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.all_implied_fbits
+                0x000093e0       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .rodata.all_implied_fbits
+                0x00009404       0x24 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+
+.rodata1
+ *(.rodata1)
+
+.ARM.extab      0x00009428        0x0
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ .ARM.extab     0x00009428        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+
+.ARM.exidx      0x00009428        0x8
+                [!provide]                PROVIDE (__exidx_start = .)
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+ .ARM.exidx     0x00009428        0x8 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+                                 0x10 (size before relaxing)
+                [!provide]                PROVIDE (__exidx_end = .)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x00009430        0x4
+ *(.eh_frame)
+ .eh_frame      0x00009430        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x00009430        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x00019434                . = (ALIGN (CONSTANT (MAXPAGESIZE)) + (. & (CONSTANT (MAXPAGESIZE) - 0x1)))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x00019434        0x0
+                [!provide]                PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x00019434        0x0
+                0x00019434                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                0x00019434                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x00019434        0x8
+                0x00019434                PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ .init_array.00000
+                0x00019434        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x00019438        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x0001943c                PROVIDE (__init_array_end = .)
+
+.fini_array     0x0001943c        0x4
+                0x0001943c                PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x0001943c        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x00019440                PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+
+.got            0x00019440        0x0
+ *(.got.plt)
+ *(.igot.plt)
+ .igot.plt      0x00019440        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ *(.got)
+ *(.igot)
+
+.data           0x00019440      0x550
+                0x00019440                __data_start = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x00019440        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+ .data          0x00019440        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .data.__dso_handle
+                0x00019440        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+                0x00019440                __dso_handle
+ .data          0x00019444        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+ .data          0x00019444        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+ .data          0x00019444        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .data.__sglue  0x00019444        0xc c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x00019444                __sglue
+ .data          0x00019450        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+ .data          0x00019450        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+ .data          0x00019450        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+ .data          0x00019450        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+ .data          0x00019450        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+ .data          0x00019450        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+ .data._impure_ptr
+                0x00019450        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+                0x00019450                _impure_ptr
+ *fill*         0x00019454        0x4 
+ .data._impure_data
+                0x00019458      0x120 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+                0x00019458                _impure_data
+ .data          0x00019578        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+ .data          0x00019578        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+ .data          0x00019578        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+ .data          0x00019578        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+ .data          0x00019578        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+ .data          0x00019578        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ .data.__atexit_recursive_mutex
+                0x00019578        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+                0x00019578                __atexit_recursive_mutex
+ .data          0x0001957c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+ .data          0x0001957c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+ .data          0x0001957c        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+ .data.__malloc_sbrk_base
+                0x0001957c        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x0001957c                __malloc_sbrk_base
+ .data.__malloc_trim_threshold
+                0x00019580        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00019580                __malloc_trim_threshold
+ *fill*         0x00019584        0x4 
+ .data.__malloc_av_
+                0x00019588      0x408 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00019588                __malloc_av_
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+ .data          0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+
+.tm_clone_table
+                0x00019990        0x0
+ .tm_clone_table
+                0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .tm_clone_table
+                0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+
+.data1
+ *(.data1)
+                0x00019990                _edata = .
+                [!provide]                PROVIDE (edata = .)
+
+.persistent     0x00019990        0x0
+                0x00019990                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__persistent_start = .)
+ *(.persistent .persistent.* .gnu.linkonce.p.*)
+                0x00019990                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__persistent_end = .)
+                0x00019990                . = .
+                0x00019990                __bss_start = .
+                0x00019990                __bss_start__ = .
+
+.bss            0x00019990      0x344
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+ .bss           0x00019990        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .bss.completed.1
+                0x00019990        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ *fill*         0x00019991        0x3 
+ .bss.object.0  0x00019994       0x18 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .bss           0x000199ac        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+ .bss           0x000199ac        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+ .bss           0x000199ac        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .bss.__sf      0x000199ac      0x138 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x000199ac                __sf
+ .bss.__stdio_exit_handler
+                0x00019ae4        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+                0x00019ae4                __stdio_exit_handler
+ .bss           0x00019ae8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+ .bss           0x00019ae8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+ .bss           0x00019ae8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+ .bss           0x00019ae8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+ .bss           0x00019ae8        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+ .bss.errno     0x00019ae8        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+                0x00019ae8                errno
+ .bss           0x00019aec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+ .bss           0x00019aec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+ .bss           0x00019aec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+ .bss           0x00019aec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+ .bss           0x00019aec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+ .bss           0x00019aec        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+ .bss.__lock___arc4random_mutex
+                0x00019aec        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019aec                __lock___arc4random_mutex
+ *fill*         0x00019aed        0x3 
+ .bss.__lock___dd_hash_mutex
+                0x00019af0        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019af0                __lock___dd_hash_mutex
+ *fill*         0x00019af1        0x3 
+ .bss.__lock___tz_mutex
+                0x00019af4        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019af4                __lock___tz_mutex
+ *fill*         0x00019af5        0x3 
+ .bss.__lock___env_recursive_mutex
+                0x00019af8        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019af8                __lock___env_recursive_mutex
+ *fill*         0x00019af9        0x3 
+ .bss.__lock___malloc_recursive_mutex
+                0x00019afc        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019afc                __lock___malloc_recursive_mutex
+ *fill*         0x00019afd        0x3 
+ .bss.__lock___at_quick_exit_mutex
+                0x00019b00        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019b00                __lock___at_quick_exit_mutex
+ *fill*         0x00019b01        0x3 
+ .bss.__lock___atexit_recursive_mutex
+                0x00019b04        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019b04                __lock___atexit_recursive_mutex
+ *fill*         0x00019b05        0x3 
+ .bss.__lock___sfp_recursive_mutex
+                0x00019b08        0x1 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+                0x00019b08                __lock___sfp_recursive_mutex
+ .bss           0x00019b09        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ *fill*         0x00019b09        0x3 
+ .bss.__atexit  0x00019b0c        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+                0x00019b0c                __atexit
+ .bss           0x00019b10        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+ .bss           0x00019b10        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+ .bss           0x00019b10        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+ .bss.__malloc_current_mallinfo
+                0x00019b10       0x28 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00019b10                __malloc_current_mallinfo
+ .bss.__malloc_max_total_mem
+                0x00019b38        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00019b38                __malloc_max_total_mem
+ .bss.__malloc_max_sbrked_mem
+                0x00019b3c        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00019b3c                __malloc_max_sbrked_mem
+ .bss.__malloc_top_pad
+                0x00019b40        0x4 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+                0x00019b40                __malloc_top_pad
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+ .bss           0x00019b44        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+ .bss.__atexit0
+                0x00019b44      0x190 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+                0x00019b44                __atexit0
+ .bss           0x00019cd4        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+ .bss           0x00019cd4        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+ .bss           0x00019cd4        0x0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+ *(COMMON)
+                0x00019cd4                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x00019cd4                _bss_end__ = .
+                0x00019cd4                __bss_end__ = .
+
+.noinit         0x00019cd4        0x0
+                0x00019cd4                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__noinit_start = .)
+ *(.noinit .noinit.* .gnu.linkonce.n.*)
+                0x00019cd4                . = ALIGN (0x4)
+                [!provide]                PROVIDE (__noinit_end = .)
+                0x00019cd4                . = ALIGN (0x4)
+                0x00019cd4                . = SEGMENT_START ("ldata-segment", .)
+                0x00019cd4                . = ALIGN (0x4)
+                0x00019cd4                __end__ = .
+                0x00019cd4                _end = .
+                [!provide]                PROVIDE (end = .)
+
+.stack          0x00080000        0x0
+                0x00080000                _stack = .
+ *(.stack)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame    0x00000000      0x70c
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x28 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+ .debug_frame   0x00000028      0x13c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .debug_frame   0x00000164       0x34 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+ .debug_frame   0x00000198       0x8c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+ .debug_frame   0x00000224       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+ .debug_frame   0x00000250       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+ .debug_frame   0x0000027c       0x3c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+ .debug_frame   0x000002b8       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+ .debug_frame   0x000002e4       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+ .debug_frame   0x00000310       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+ .debug_frame   0x0000033c       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+ .debug_frame   0x00000368       0xb0 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+ .debug_frame   0x00000418       0x5c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ .debug_frame   0x00000474       0x20 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+ .debug_frame   0x00000494       0x78 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+ .debug_frame   0x0000050c       0x48 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+ .debug_frame   0x00000554       0x30 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+ .debug_frame   0x00000584       0x3c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+ .debug_frame   0x000005c0       0x70 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+ .debug_frame   0x00000630       0x2c c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+ .debug_frame   0x0000065c       0x34 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+ .debug_frame   0x00000690       0x28 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+ .debug_frame   0x000006b8       0x34 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+ .debug_frame   0x000006ec       0x20 c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+                0x00000000       0xdf
+ *(.debug_line_str)
+ .debug_line_str
+                0x00000000       0xdf c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.ARM.attributes
+                0x00000000       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crti.o
+ .ARM.attributes
+                0x0000001d       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crt0.o
+ .ARM.attributes
+                0x00000065       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-exit.o)
+ .ARM.attributes
+                0x00000092       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-findfp.o)
+ .ARM.attributes
+                0x000000bf       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fwalk.o)
+ .ARM.attributes
+                0x000000ec       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-stdio.o)
+ .ARM.attributes
+                0x00000119       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-memset.o)
+ .ARM.attributes
+                0x00000146       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-closer.o)
+ .ARM.attributes
+                0x00000173       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-reent.o)
+ .ARM.attributes
+                0x000001a0       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-impure.o)
+ .ARM.attributes
+                0x000001cd       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lseekr.o)
+ .ARM.attributes
+                0x000001fa       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-readr.o)
+ .ARM.attributes
+                0x00000227       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-writer.o)
+ .ARM.attributes
+                0x00000254       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-init.o)
+ .ARM.attributes
+                0x00000281       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-lock.o)
+ .ARM.attributes
+                0x000002ae       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__call_atexit.o)
+ .ARM.attributes
+                0x000002db       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-atexit.o)
+ .ARM.attributes
+                0x00000308       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-freer.o)
+ .ARM.attributes
+                0x00000335       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mallocr.o)
+ .ARM.attributes
+                0x00000362       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-mlock.o)
+ .ARM.attributes
+                0x0000038f       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fclose.o)
+ .ARM.attributes
+                0x000003bc       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fflush.o)
+ .ARM.attributes
+                0x000003e9       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sbrkr.o)
+ .ARM.attributes
+                0x00000416       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-fini.o)
+ .ARM.attributes
+                0x00000443       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-sysconf.o)
+ .ARM.attributes
+                0x00000470       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-__atexit.o)
+ .ARM.attributes
+                0x0000049d       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp\libc.a(libc_a-errno.o)
+ .ARM.attributes
+                0x000004ca       0x2d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtend.o
+ .ARM.attributes
+                0x000004f7       0x1d c:/program files (custom)/arm-gnu-toolchain/bin/../lib/gcc/arm-none-eabi/12.2.1/thumb/v7-m/nofp/crtn.o
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs

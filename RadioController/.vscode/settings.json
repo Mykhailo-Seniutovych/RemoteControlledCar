@@ -1,0 +1,23 @@
+{
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "C_Cpp.intelliSenseEngine": "default",
+    "files.associations": {
+        "compare": "c",
+        "main.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "nrf24l01.h": "c",
+        "rf24.h": "c",
+        "stm32f1xx_hal_conf.h": "c",
+        "cstdint": "c",
+        "nrf24.h": "c",
+        "string.h": "c",
+        "app-main.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "system_error": "c",
+        "initializer_list": "c",
+        "stm32f1xx.h": "c"
+    },
+    "cortex-debug.variableUseNaturalFormat": true
+}
