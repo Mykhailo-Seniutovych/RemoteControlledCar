@@ -3,7 +3,7 @@
         {
             "name": "Cortex Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "./build/BasicTransmitter.elf",
+            "executable": "./build/RadioController.elf",
             "request": "launch",
             "type": "cortex-debug",
             "device": "STM32F103Cy8",
