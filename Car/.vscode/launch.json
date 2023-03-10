@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/Car.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "device": "STM32F103Cy8",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f1x.cfg"
+            ]
+        }
+    ],
+    "version": "2.0.0"
+}
