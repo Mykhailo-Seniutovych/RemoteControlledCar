@@ -7,9 +7,9 @@
 
 // GPIO
 #define CSN_PORT GPIOA
-#define CSN_PIN GPIO_PIN_8
+#define CSN_PIN GPIO_PIN_4
 #define CE_PORT GPIOA
-#define CE_PIN GPIO_PIN_9
+#define CE_PIN GPIO_PIN_3
 
 // SPI
 extern SPI_HandleTypeDef hspi1;

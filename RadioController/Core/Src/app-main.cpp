@@ -7,8 +7,15 @@
 #define LED_PORT GPIOC
 #define LED_PIN GPIO_PIN_13
 
+#define RIGHT_JOYSTICK_VERTICAL_ADC ADC_CHANNEL_0
+#define RIGHT_JOYSTICK_HORIZONTAL_ADC ADC_CHANNEL_1
 #define RIGHT_JOYSTICK_BTN_PORT GPIOC
 #define RIGHT_JOYSTICK_BTN_PIN GPIO_PIN_15
+
+#define LEFT_JOYSTICK_VERTICAL_ADC ADC_CHANNEL_2
+#define LEFT_JOYSTICK_HORIZONTAL_ADC ADC_CHANNEL_3
+#define LEFT_JOYSTICK_BTN_PORT GPIOB
+#define LEFT_JOYSTICK_BTN_PIN GPIO_PIN_9
 
 extern ADC_HandleTypeDef hadc1;
 extern SPI_HandleTypeDef hspi2;
@@ -16,15 +23,18 @@ extern SPI_HandleTypeDef hspi2;
 int appMain() {
     HAL_ADCEx_Calibration_Start(&hadc1);
 
-    //JoystickReader joystick(ADC_CHANNEL_0, ADC_CHANNEL_1, &hadc1, RIGHT_JOYSTICK_BTN_PORT, RIGHT_JOYSTICK_BTN_PIN);
+    JoystickReader joystick(
+        RIGHT_JOYSTICK_VERTICAL_ADC,
+        RIGHT_JOYSTICK_HORIZONTAL_ADC,
+        &hadc1,
+        RIGHT_JOYSTICK_BTN_PORT,
+        RIGHT_JOYSTICK_BTN_PIN
+    );
     CommandTransmitter cmdTransmitter;
     cmdTransmitter.initializeTransmission();
     while (true) {
-        // JoystickState state = joystick.readState();
-        // if(state == JoystickState::None) {
-        //     state = JoystickState::Backward;
-        // }
-        cmdTransmitter.transmitCommand(JoystickState::Forward);
+        JoystickState state = joystick.readState();
+        cmdTransmitter.transmitCommand(state);
     }
     return 0;
 }

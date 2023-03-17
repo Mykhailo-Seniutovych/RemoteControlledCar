@@ -97,8 +97,10 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     /**ADC1 GPIO Configuration
     PA0-WKUP     ------> ADC1_IN0
     PA1     ------> ADC1_IN1
+    PA2     ------> ADC1_IN2
+    PA3     ------> ADC1_IN3
     */
-    GPIO_InitStruct.Pin = RIGHT_JOYSTICK_Y_Pin|RIGHT_JOYSTICK_X_Pin;
+    GPIO_InitStruct.Pin = RIGHT_JOYSTICK_VERTICAL_Pin|RIGHT_JOYSTICK_HORIZONTAL_Pin|LEFT_JOYSTICK_VERTICAL_Pin|LEFT_JOYSTICK_HORIZONTAL_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
@@ -128,8 +130,10 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     /**ADC1 GPIO Configuration
     PA0-WKUP     ------> ADC1_IN0
     PA1     ------> ADC1_IN1
+    PA2     ------> ADC1_IN2
+    PA3     ------> ADC1_IN3
     */
-    HAL_GPIO_DeInit(GPIOA, RIGHT_JOYSTICK_Y_Pin|RIGHT_JOYSTICK_X_Pin);
+    HAL_GPIO_DeInit(GPIOA, RIGHT_JOYSTICK_VERTICAL_Pin|RIGHT_JOYSTICK_HORIZONTAL_Pin|LEFT_JOYSTICK_VERTICAL_Pin|LEFT_JOYSTICK_HORIZONTAL_Pin);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 

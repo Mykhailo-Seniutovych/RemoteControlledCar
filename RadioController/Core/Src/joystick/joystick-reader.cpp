@@ -6,12 +6,12 @@
 #define MOVEMENT_MAX_BOUNDARY (ADC_RESOLUTION - MOVEMENT_MIN_BOUNDARY)
 
 JoystickReader::JoystickReader(
-    uint32_t xChannel,
-    uint32_t yChannel,
+    uint32_t vertChannel,
+    uint32_t horChannel,
     ADC_HandleTypeDef *adc,
     GPIO_TypeDef *btnPort,
     uint16_t btnPin
-) : xChannel_(xChannel), yChannel_(yChannel), adc_(adc), btnPort_(btnPort), btnPin_(btnPin) {
+) : vertChannel_(vertChannel), horChannel_(horChannel), adc_(adc), btnPort_(btnPort), btnPin_(btnPin) {
     adcChannelConfig_.Rank = ADC_REGULAR_RANK_1;
     adcChannelConfig_.SamplingTime = ADC_SAMPLETIME_71CYCLES_5;
 }
@@ -21,18 +21,18 @@ JoystickState JoystickReader::readState() {
         return JoystickState::BtnPressed;
     }
 
-    uint16_t xAdcValue = readAdcValue(xChannel_);
-    uint16_t yAdcValue = readAdcValue(yChannel_);
+    uint16_t vertAdcValue = readAdcValue(vertChannel_);
+    uint16_t horAdcValue = readAdcValue(horChannel_);
 
-    uint16_t xScore = getScoreFromAdcValue(xAdcValue);
-    uint16_t yScore = getScoreFromAdcValue(yAdcValue);
+    uint16_t vertScore = getScoreFromAdcValue(vertAdcValue);
+    uint16_t horScore = getScoreFromAdcValue(horAdcValue);
 
-    if (xScore == 0 && yScore == 0) {
+    if (vertScore == 0 && horScore == 0) {
         return JoystickState::None;
-    } else if (xScore >= yScore) {
-        return getXMovementFromAdcValue(xAdcValue);
+    } else if (vertScore >= horScore) {
+        return getVertMovementFromAdcValue(vertAdcValue);
     } else {
-        return getYMovementFromAdcValue(yAdcValue);
+        return getHorMovementFromAdcValue(horAdcValue);
     }
 }
 
@@ -58,9 +58,9 @@ int16_t JoystickReader::getScoreFromAdcValue(uint16_t adcValue) {
     return 0;
 }
 
-JoystickState JoystickReader::getXMovementFromAdcValue(uint16_t adcValue) {
-    return adcValue < ADC_RESOLUTION / 2 ? JoystickState::Forward : JoystickState::Backward;
+JoystickState JoystickReader::getVertMovementFromAdcValue(uint16_t adcValue) {
+    return adcValue > ADC_RESOLUTION / 2 ? JoystickState::Forward : JoystickState::Backward;
 }
-JoystickState JoystickReader::getYMovementFromAdcValue(uint16_t adcValue) {
-    return adcValue < ADC_RESOLUTION / 2 ? JoystickState::Left : JoystickState::Right;
+JoystickState JoystickReader::getHorMovementFromAdcValue(uint16_t adcValue) {
+    return adcValue > ADC_RESOLUTION / 2 ? JoystickState::Right : JoystickState::Left;
 }

@@ -57,6 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define MOVE_BACK_Pin GPIO_PIN_14
+#define MOVE_BACK_GPIO_Port GPIOC
+#define MOVE_FORWARD_Pin GPIO_PIN_15
+#define MOVE_FORWARD_GPIO_Port GPIOC
 #define CE_Pin GPIO_PIN_3
 #define CE_GPIO_Port GPIOA
 #define CSN_Pin GPIO_PIN_4
