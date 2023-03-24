@@ -1,34 +1,49 @@
 #include "app-main.h"
+#include "camera/camera-mount.h"
+#include "camera/pwm-info.h"
+#include "command-processing/command-processor.h"
 #include "nrf24/nrf24.h"
 #include "stm32f1xx_hal.h"
 
-#define LED_GREEN_PORT GPIOB
-#define LED_GREEN_PIN GPIO_PIN_12
+#define MOUNT_HOR_CCR htim1.Instance->CCR1
+#define MOUNT_VER_CCR htim1.Instance->CCR2
+#define MOUNT_ARR htim1.Instance->ARR
 
-#define LED_RED_PORT GPIOB
-#define LED_RED_PIN GPIO_PIN_14
-
-#define LED_BLUE_PORT GPIOA
-#define LED_BLUE_PIN GPIO_PIN_10
-
-#define LED_YELLOW_PORT GPIOA
-#define LED_YELLOW_PIN GPIO_PIN_12
-
-#define MOVE_BACK_PORT GPIOC
-#define MOVE_BACK_PIN GPIO_PIN_14
-
-#define MOVE_FORWARD_PORT GPIOC
-#define MOVE_FORWARD_PIN GPIO_PIN_15
+#define MIN_PWM 0.025f
+#define MAX_PWM 0.125f
 
 extern SPI_HandleTypeDef hspi1;
+extern TIM_HandleTypeDef htim1;
 
-enum CarCommand {
-    None = 0,
-    MoveForward = 10,
-    MoveBackward = 20,
-    TurnRight = 30,
-    TurnLeft = 40
-};
+static void initialize();
+
+
+int appMain() {
+    HAL_Delay(1000);
+    initialize();
+    HAL_Delay(1000);
+
+    PwmInfo pwmInfo(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
+    CameraMount cameraMount(&pwmInfo, MIN_PWM, MAX_PWM);
+    CommandReader commandReader;
+    CommandProcessor commandProcessor(&cameraMount, &commandReader);
+
+    while (1) {
+        commandProcessor.processNextCommand();
+        HAL_Delay(10);
+    }
+    return 0;
+}
+
+void initialize() {
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+
+    nrf24_Init();
+    nrf24_EnterRxMode();
+}
+
+//////////////////// OLD CODE SHOULD BE DELETED
 
 static void receiveCommandsOld();
 static void receiveCommands();
@@ -37,7 +52,7 @@ static void driveForward();
 static void driveBackward();
 static void turnOffMotion();
 
-int appMain() {
+int appMainOld() {
     HAL_Delay(1000);
     nrf24_Init();
     nrf24_EnterRxMode();
@@ -62,8 +77,6 @@ static void receiveCommands() {
                 turnOffMotion();
                 currentCmd = CarCommand::MoveForward;
             }
-            HAL_GPIO_WritePin(LED_GREEN_PORT, LED_GREEN_PIN, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(MOVE_FORWARD_PORT, MOVE_FORWARD_PIN, GPIO_PIN_SET);
             isRunning = true;
             counter = 0;
 
@@ -72,8 +85,7 @@ static void receiveCommands() {
                 turnOffMotion();
                 currentCmd = CarCommand::MoveBackward;
             }
-            HAL_GPIO_WritePin(LED_RED_PORT, LED_RED_PIN, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(MOVE_BACK_PORT, MOVE_BACK_PIN, GPIO_PIN_SET);
+
             isRunning = true;
             counter = 0;
         } else if (cmd == CarCommand::TurnRight) {
@@ -81,8 +93,7 @@ static void receiveCommands() {
                 turnOffMotion();
                 currentCmd = CarCommand::TurnRight;
             }
-            HAL_GPIO_WritePin(LED_BLUE_PORT, LED_BLUE_PIN, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(MOVE_FORWARD_PORT, MOVE_FORWARD_PIN, GPIO_PIN_SET);
+
             isRunning = true;
             counter = 0;
         } else if (cmd == CarCommand::TurnLeft) {
@@ -90,8 +101,7 @@ static void receiveCommands() {
                 turnOffMotion();
                 currentCmd = CarCommand::TurnLeft;
             }
-            HAL_GPIO_WritePin(LED_YELLOW_PORT, LED_YELLOW_PIN, GPIO_PIN_RESET);
-            HAL_GPIO_WritePin(MOVE_BACK_PORT, MOVE_BACK_PIN, GPIO_PIN_SET);
+
             isRunning = true;
             counter = 0;
         }
@@ -104,35 +114,7 @@ static void receiveCommands() {
     }
     HAL_Delay(5);
 }
+
 static void turnOffMotion() {
-    HAL_GPIO_WritePin(MOVE_FORWARD_PORT, MOVE_FORWARD_PIN, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(MOVE_BACK_PORT, MOVE_BACK_PIN, GPIO_PIN_RESET);
-
-    HAL_GPIO_WritePin(LED_GREEN_PORT, LED_GREEN_PIN, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LED_RED_PORT, LED_RED_PIN, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LED_BLUE_PORT, LED_BLUE_PIN, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(LED_YELLOW_PORT, LED_YELLOW_PIN, GPIO_PIN_SET);
     isRunning = false;
-}
-
-static void receiveCommandsOld() {
-    uint8_t data[1] = {};
-    nrf24_WaitAndReceiveData(data, 1);
-
-    CarCommand cmd = static_cast<CarCommand>(data[0]);
-    if (cmd == CarCommand::MoveForward) {
-        turnOnAndOffLed(LED_GREEN_PORT, LED_GREEN_PIN);
-    } else if (cmd == CarCommand::MoveBackward) {
-        turnOnAndOffLed(LED_RED_PORT, LED_RED_PIN);
-    } else if (cmd == CarCommand::TurnRight) {
-        turnOnAndOffLed(LED_BLUE_PORT, LED_BLUE_PIN);
-    } else if (cmd == CarCommand::TurnLeft) {
-        turnOnAndOffLed(LED_YELLOW_PORT, LED_YELLOW_PIN);
-    }
-}
-
-static void turnOnAndOffLed(GPIO_TypeDef *port, uint16_t pin) {
-    HAL_GPIO_WritePin(port, pin, GPIO_PIN_RESET);
-    HAL_Delay(200);
-    HAL_GPIO_WritePin(port, pin, GPIO_PIN_SET);
 }
