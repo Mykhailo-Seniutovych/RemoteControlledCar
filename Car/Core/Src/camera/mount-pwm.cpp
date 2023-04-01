@@ -1,6 +1,7 @@
-#include "camera/pwm-info.h"
+#include "camera/mount-pwm.h"
+#include <stdint.h>
 
-PwmInfo::PwmInfo(
+MountPwm::MountPwm(
     volatile uint32_t *horCCR,
     volatile uint32_t *vertCCR,
     volatile uint32_t *ARR

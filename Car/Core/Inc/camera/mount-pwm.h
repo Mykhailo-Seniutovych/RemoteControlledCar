@@ -1,14 +1,14 @@
-#ifndef INC_CAMERA_PMW_INFO_H_
-#define INC_CAMERA_PMW_INFO_H_
+#ifndef INC_CAMERA_MOUNT_PWM_H_
+#define INC_CAMERA_MOUNT_PWM_H_
 
-#include <stm32f1xx_hal.h>
+#include <stdint.h>
 
-struct PwmInfo {
+struct MountPwm {
     volatile uint32_t *horCCR;
     volatile uint32_t *vertCCR;
     volatile uint32_t *ARR;
 
-    PwmInfo(
+    MountPwm(
         volatile uint32_t *horCCR,
         volatile uint32_t *horARR,
         volatile uint32_t *ARR

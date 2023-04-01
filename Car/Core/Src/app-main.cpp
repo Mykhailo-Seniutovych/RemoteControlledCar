@@ -1,32 +1,43 @@
 #include "app-main.h"
 #include "camera/camera-mount.h"
-#include "camera/pwm-info.h"
+#include "camera/mount-pwm.h"
 #include "command-processing/command-processor.h"
+#include "led/led-pwm.h"
+#include "led/led.h"
+#include "led/color.h"
 #include "nrf24/nrf24.h"
 #include "stm32f1xx_hal.h"
+
+extern SPI_HandleTypeDef hspi1;
+extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim2;
 
 #define MOUNT_HOR_CCR htim1.Instance->CCR1
 #define MOUNT_VER_CCR htim1.Instance->CCR2
 #define MOUNT_ARR htim1.Instance->ARR
 
+#define LED_RED_CCR htim2.Instance->CCR1
+#define LED_GREEN_CCR htim2.Instance->CCR2
+#define LED_BLUE_CCR htim2.Instance->CCR3
+
 #define MIN_PWM 0.025f
 #define MAX_PWM 0.125f
 
-extern SPI_HandleTypeDef hspi1;
-extern TIM_HandleTypeDef htim1;
-
 static void initialize();
-
 
 int appMain() {
     HAL_Delay(1000);
     initialize();
     HAL_Delay(1000);
 
-    PwmInfo pwmInfo(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
-    CameraMount cameraMount(&pwmInfo, MIN_PWM, MAX_PWM);
+    MountPwm mountPwm(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
+
+    CameraMount cameraMount(&mountPwm, MIN_PWM, MAX_PWM);
     CommandReader commandReader;
-    CommandProcessor commandProcessor(&cameraMount, &commandReader);
+
+    LedPwm ledPwm(&LED_RED_CCR, &LED_GREEN_CCR, &LED_BLUE_CCR);
+    Led led(&ledPwm);
+    CommandProcessor commandProcessor(&cameraMount, &commandReader, &led);
 
     while (1) {
         commandProcessor.processNextCommand();
@@ -38,6 +49,10 @@ int appMain() {
 void initialize() {
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+
+    HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+    HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
     nrf24_Init();
     nrf24_EnterRxMode();
