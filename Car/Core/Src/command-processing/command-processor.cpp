@@ -40,7 +40,6 @@ void CommandProcessor::processNextCommand() {
     } else if (cmd == CarCommand::TurnRight) {
         cameraMount_->rotateRight(1);
         led_->turnColorOn(YellowColor);
-
     } else if (cmd == CarCommand::TurnLeft) {
         cameraMount_->rotateLeft(1);
         led_->turnColorOn(YellowColor);

@@ -63,6 +63,12 @@ void Error_Handler(void);
 #define MOVE_BACK_GPIO_Port GPIOC
 #define MOVE_FORWARD_Pin GPIO_PIN_15
 #define MOVE_FORWARD_GPIO_Port GPIOC
+#define RED_PWM_Pin GPIO_PIN_0
+#define RED_PWM_GPIO_Port GPIOA
+#define GREEN_PWM_Pin GPIO_PIN_1
+#define GREEN_PWM_GPIO_Port GPIOA
+#define BLUE_PWM_Pin GPIO_PIN_2
+#define BLUE_PWM_GPIO_Port GPIOA
 #define CE_Pin GPIO_PIN_3
 #define CE_GPIO_Port GPIOA
 #define CSN_Pin GPIO_PIN_4
@@ -71,6 +77,14 @@ void Error_Handler(void);
 #define MOUNT_HOR_GPIO_Port GPIOA
 #define MOUNT_VERT_Pin GPIO_PIN_9
 #define MOUNT_VERT_GPIO_Port GPIOA
+#define DRV1_PNP1_Pin GPIO_PIN_15
+#define DRV1_PNP1_GPIO_Port GPIOA
+#define DRV1_PNP2_Pin GPIO_PIN_3
+#define DRV1_PNP2_GPIO_Port GPIOB
+#define DRV1_NPN1_Pin GPIO_PIN_6
+#define DRV1_NPN1_GPIO_Port GPIOB
+#define DRV1_NPN2_Pin GPIO_PIN_7
+#define DRV1_NPN2_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
