@@ -2,26 +2,36 @@
 #include "camera/camera-mount.h"
 #include "camera/mount-pwm.h"
 #include "command-processing/command-processor.h"
+#include "driver/driver-pwm.h"
+#include "driver/driver.h"
+#include "led/color.h"
 #include "led/led-pwm.h"
 #include "led/led.h"
-#include "led/color.h"
 #include "nrf24/nrf24.h"
 #include "stm32f1xx_hal.h"
 
 extern SPI_HandleTypeDef hspi1;
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim4;
 
 #define MOUNT_HOR_CCR htim1.Instance->CCR1
 #define MOUNT_VER_CCR htim1.Instance->CCR2
 #define MOUNT_ARR htim1.Instance->ARR
+#define MOUNT_MIN_PWM 0.025f
+#define MOUNT_MAX_PWM 0.125f
+
+#define DRV1_PNP1_PORT GPIOB
+#define DRV1_PNP1_PIN GPIO_PIN_1
+#define DRV1_PNP2_PORT GPIOB
+#define DRV1_PNP2_PIN GPIO_PIN_0
+#define DRIVER1_NPN1_CCR htim4.Instance->CCR1
+#define DRIVER1_NPN2_CCR htim4.Instance->CCR2
+#define DRIVER1_ARR htim4.Instance->ARR
 
 #define LED_RED_CCR htim2.Instance->CCR1
 #define LED_GREEN_CCR htim2.Instance->CCR2
 #define LED_BLUE_CCR htim2.Instance->CCR3
-
-#define MIN_PWM 0.025f
-#define MAX_PWM 0.125f
 
 static void initialize();
 
@@ -30,16 +40,19 @@ int appMain() {
     initialize();
     HAL_Delay(1000);
 
-    MountPwm mountPwm(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
+    auto driverPwm = DriverPwm(&DRIVER1_NPN1_CCR, &DRIVER1_NPN2_CCR, &DRIVER1_ARR);
+    auto driver = Driver(DRV1_PNP1_PORT, DRV1_PNP1_PIN, DRV1_PNP2_PORT, DRV1_PNP2_PIN, &driverPwm);
 
-    CameraMount cameraMount(&mountPwm, MIN_PWM, MAX_PWM);
+    auto mountPwm = MountPwm(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
+    auto cameraMount = CameraMount(&mountPwm, MOUNT_MIN_PWM, MOUNT_MAX_PWM);
+
     CommandReader commandReader;
 
     LedPwm ledPwm(&LED_RED_CCR, &LED_GREEN_CCR, &LED_BLUE_CCR);
     Led led(&ledPwm);
-    CommandProcessor commandProcessor(&cameraMount, &commandReader, &led);
 
-    while (1) {
+    auto commandProcessor =  CommandProcessor(&driver, &cameraMount, &commandReader, &led);
+    while (true) {
         commandProcessor.processNextCommand();
         HAL_Delay(10);
     }
@@ -54,82 +67,9 @@ void initialize() {
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
 
+    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);
+
     nrf24_Init();
     nrf24_EnterRxMode();
-}
-
-//////////////////// OLD CODE SHOULD BE DELETED
-
-static void receiveCommandsOld();
-static void receiveCommands();
-static void turnOnAndOffLed(GPIO_TypeDef *port, uint16_t pin);
-static void driveForward();
-static void driveBackward();
-static void turnOffMotion();
-
-int appMainOld() {
-    HAL_Delay(1000);
-    nrf24_Init();
-    nrf24_EnterRxMode();
-    while (true) {
-        receiveCommands();
-    }
-    return 0;
-}
-
-bool isRunning = false;
-int counter = 0;
-CarCommand currentCmd = CarCommand::None;
-
-static void receiveCommands() {
-    uint8_t data[1] = {};
-    if (nrf24_IsDataAvailable()) {
-        nrf24_ReadData(data, 1);
-
-        CarCommand cmd = static_cast<CarCommand>(data[0]);
-        if (cmd == CarCommand::MoveForward) {
-            if (currentCmd != CarCommand::MoveForward) {
-                turnOffMotion();
-                currentCmd = CarCommand::MoveForward;
-            }
-            isRunning = true;
-            counter = 0;
-
-        } else if (cmd == CarCommand::MoveBackward) {
-            if (currentCmd != CarCommand::MoveBackward) {
-                turnOffMotion();
-                currentCmd = CarCommand::MoveBackward;
-            }
-
-            isRunning = true;
-            counter = 0;
-        } else if (cmd == CarCommand::TurnRight) {
-            if (currentCmd != CarCommand::TurnRight) {
-                turnOffMotion();
-                currentCmd = CarCommand::TurnRight;
-            }
-
-            isRunning = true;
-            counter = 0;
-        } else if (cmd == CarCommand::TurnLeft) {
-            if (currentCmd != CarCommand::TurnLeft) {
-                turnOffMotion();
-                currentCmd = CarCommand::TurnLeft;
-            }
-
-            isRunning = true;
-            counter = 0;
-        }
-    } else if (isRunning) {
-        ++counter;
-    }
-
-    if (counter > 50) {
-        turnOffMotion();
-    }
-    HAL_Delay(5);
-}
-
-static void turnOffMotion() {
-    isRunning = false;
 }

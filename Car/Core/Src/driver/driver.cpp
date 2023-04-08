@@ -31,11 +31,17 @@ void Driver::stop() {
 
     *pwm_->npn1CCR = 0;
     *pwm_->npn2CCR = 0;
+
+    currentDirection_ = MovementDirection::None;
+    currentSpeed_ = Speed::None;
 }
 
 void Driver::moveForward(Speed speed) {
+    if (!isMovementChange(MovementDirection::Forward, speed))
+        return;
+
     GPIO_InitTypeDef GPIO_InitStruct = {0};
-    
+
     HAL_GPIO_WritePin(pnp1Port_, pnp1Pin_, GPIO_PIN_SET);
     GPIO_InitStruct.Pin = pnp1Pin_;
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -60,9 +66,15 @@ void Driver::moveForward(Speed speed) {
         HAL_Delay(100);
         *pwm_->npn1CCR = (*pwm_->ARR) * 0.5;
     }
+
+    currentDirection_ = MovementDirection::Forward;
+    currentSpeed_ = speed;
 }
 
 void Driver::moveBackward(Speed speed) {
+    if (!isMovementChange(MovementDirection::Backward, speed))
+        return;
+
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
     HAL_GPIO_WritePin(pnp2Port_, pnp2Pin_, GPIO_PIN_SET);
@@ -85,4 +97,11 @@ void Driver::moveBackward(Speed speed) {
         HAL_Delay(100);
         *pwm_->npn2CCR = (*pwm_->ARR) * 0.5;
     }
+
+    currentDirection_ = MovementDirection::Backward;
+    currentSpeed_ = speed;
+}
+
+bool Driver::isMovementChange(MovementDirection newDirection, Speed newSpeed) {
+    return currentDirection_ != newDirection || currentSpeed_ != newSpeed;
 }

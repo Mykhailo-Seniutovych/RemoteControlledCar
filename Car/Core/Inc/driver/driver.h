@@ -1,6 +1,7 @@
 #ifndef INC_DRIVER_DRIVER_H_
 #define INC_DRIVER_DRIVER_H_
 #include "driver/driver-pwm.h"
+#include "driver/movement-direction.h"
 #include "driver/speed.h"
 #include "stdint.h"
 #include "stm32f1xx_hal.h"
@@ -21,6 +22,9 @@ class Driver {
     void stop();
 
   private:
+    MovementDirection currentDirection_ = MovementDirection::None;
+    Speed currentSpeed_ = Speed::None;
+
     GPIO_TypeDef *pnp1Port_;
     uint8_t pnp1Pin_;
 
@@ -28,6 +32,8 @@ class Driver {
     uint8_t pnp2Pin_;
 
     DriverPwm *pwm_;
+
+    bool isMovementChange(MovementDirection newDirection, Speed newSpeed);
 };
 
 #endif
