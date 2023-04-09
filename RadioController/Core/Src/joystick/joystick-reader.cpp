@@ -2,8 +2,8 @@
 #include "stm32f1xx_hal.h"
 
 #define ADC_RESOLUTION 4096
-#define MOVEMENT_MIN_BOUNDARY (ADC_RESOLUTION / 8)
-#define MOVEMENT_MAX_BOUNDARY (ADC_RESOLUTION - MOVEMENT_MIN_BOUNDARY)
+#define MOVEMENT_MIN_BOUNDARY 1024
+#define MOVEMENT_MAX_BOUNDARY 3072
 
 JoystickReader::JoystickReader(
     uint32_t vertChannel,
@@ -17,9 +17,7 @@ JoystickReader::JoystickReader(
 }
 
 JoystickState JoystickReader::readState() {
-    if (isBtnPressed()) {
-        return JoystickState::BtnPressed;
-    }
+    auto btnPressed = isBtnPressed();
 
     uint16_t vertAdcValue = readAdcValue(vertChannel_);
     uint16_t horAdcValue = readAdcValue(horChannel_);
@@ -28,12 +26,21 @@ JoystickState JoystickReader::readState() {
     uint16_t horScore = getScoreFromAdcValue(horAdcValue);
 
     if (vertScore == 0 && horScore == 0) {
-        return JoystickState::None;
-    } else if (vertScore >= horScore) {
-        return getVertMovementFromAdcValue(vertAdcValue);
-    } else {
-        return getHorMovementFromAdcValue(horAdcValue);
+        return btnPressed ? JoystickState::BtnPressed : JoystickState::None;
     }
+
+    JoystickState state;
+    if (vertScore >= horScore) {
+        state = getVertMovementFromAdcValue(vertAdcValue);
+    } else {
+        state = getHorMovementFromAdcValue(horAdcValue);
+    }
+
+    if (btnPressed) {
+        state = state | JoystickState::BtnPressed;
+    }
+
+    return state;
 }
 
 bool JoystickReader::isBtnPressed() {

@@ -8,7 +8,7 @@
 class CommandTransmitter {
   public:
     void initializeTransmission();
-    void transmitCommand(JoystickState state);
+    void transmitCommand(JoystickState rightState, JoystickState leftState);
 };
 
 #endif

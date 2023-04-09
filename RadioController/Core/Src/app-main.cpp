@@ -23,18 +23,26 @@ extern SPI_HandleTypeDef hspi2;
 int appMain() {
     HAL_ADCEx_Calibration_Start(&hadc1);
 
-    JoystickReader joystick(
+    auto rightJoystick = JoystickReader(
         RIGHT_JOYSTICK_VERTICAL_ADC,
         RIGHT_JOYSTICK_HORIZONTAL_ADC,
         &hadc1,
         RIGHT_JOYSTICK_BTN_PORT,
         RIGHT_JOYSTICK_BTN_PIN
     );
+    auto leftJoystick = JoystickReader(
+        LEFT_JOYSTICK_VERTICAL_ADC,
+        LEFT_JOYSTICK_HORIZONTAL_ADC,
+        &hadc1,
+        LEFT_JOYSTICK_BTN_PORT,
+        LEFT_JOYSTICK_BTN_PIN
+    );
     CommandTransmitter cmdTransmitter;
     cmdTransmitter.initializeTransmission();
     while (true) {
-        JoystickState state = joystick.readState();
-        cmdTransmitter.transmitCommand(state);
+        auto rightState = rightJoystick.readState();
+        auto leftState = leftJoystick.readState();
+        cmdTransmitter.transmitCommand(rightState, leftState);
     }
     return 0;
 }

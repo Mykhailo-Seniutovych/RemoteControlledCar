@@ -32,17 +32,35 @@ void CommandProcessor::processNextCommand() {
         driver_->stop();
     }
 
-    if (cmd == CarCommand::MoveForward) {
+    if (cmd == CarCommand::MoveForwardFast) {
+        driver_->moveForward(Speed::Fast);
+        led_->turnColorOn(GreenColor);
+    } else if (cmd == CarCommand::MoveForwardSlow) {
         driver_->moveForward(Speed::Slow);
         led_->turnColorOn(GreenColor);
-    } else if (cmd == CarCommand::MoveBackward) {
+    }
+
+    else if (cmd == CarCommand::MoveBackwardFast) {
+        driver_->moveBackward(Speed::Fast);
+        led_->turnColorOn(WhiteColor);
+    } else if (cmd == CarCommand::MoveBackwardSlow) {
         driver_->moveBackward(Speed::Slow);
         led_->turnColorOn(WhiteColor);
-    } else if (cmd == CarCommand::TurnRight) {
+    }
+
+    else if (cmd == CarCommand::TurnRightFast) {
         driver_->moveForward(Speed::Fast);
         led_->turnColorOn(YellowColor);
-    } else if (cmd == CarCommand::TurnLeft) {
+    } else if (cmd == CarCommand::TurnRightSlow) {
+        driver_->moveForward(Speed::Slow);
+        led_->turnColorOn(YellowColor);
+    }
+
+    else if (cmd == CarCommand::TurnLeftFast) {
         driver_->moveBackward(Speed::Fast);
+        led_->turnColorOn(YellowColor);
+    } else if (cmd == CarCommand::TurnLeftSlow) {
+        driver_->moveBackward(Speed::Slow);
         led_->turnColorOn(YellowColor);
     }
 }
@@ -66,10 +84,10 @@ void CommandProcessor::processNextCommand() {
 //         led_->turnOff();
 //     }
 
-//     if (cmd == CarCommand::MoveForward) {
+//     if (cmd == CarCommand::MoveForwardFast) {
 //         cameraMount_->rotateDown(1);
 //         led_->turnColorOn(TurquoiseColor);
-//     } else if (cmd == CarCommand::MoveBackward) {
+//     } else if (cmd == CarCommand::MoveBackwardFast) {
 //         cameraMount_->rotateUp(1);
 //         led_->turnColorOn(TurquoiseColor);
 //     } else if (cmd == CarCommand::TurnRight) {
