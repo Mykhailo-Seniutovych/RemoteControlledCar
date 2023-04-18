@@ -11,9 +11,9 @@ class Driver {
   public:
     Driver(
         GPIO_TypeDef *pnp1Port,
-        uint8_t pnp1Pin,
+        uint16_t pnp1Pin,
         GPIO_TypeDef *pnp2Port,
-        uint8_t pnp2Pin,
+        uint16_t pnp2Pin,
         DriverPwm *pwm
     );
 
@@ -26,10 +26,10 @@ class Driver {
     Speed currentSpeed_ = Speed::None;
 
     GPIO_TypeDef *pnp1Port_;
-    uint8_t pnp1Pin_;
+    uint16_t pnp1Pin_;
 
     GPIO_TypeDef *pnp2Port_;
-    uint8_t pnp2Pin_;
+    uint16_t pnp2Pin_;
 
     DriverPwm *pwm_;
 

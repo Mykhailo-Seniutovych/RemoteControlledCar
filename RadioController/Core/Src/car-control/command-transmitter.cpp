@@ -42,10 +42,6 @@ void CommandTransmitter::transmitCommand(JoystickState rightState, JoystickState
         cmd = static_cast<uint8_t>(CarCommand::PanLeft);
     }
 
-    // bool test = false;
-    // if (cmd == 0) {
-    //     test = true;
-    // }
     if (cmd > 0) {
         nrf24_TransmitData(&cmd, 1);
     }

@@ -73,18 +73,26 @@ void Error_Handler(void);
 #define CE_GPIO_Port GPIOA
 #define CSN_Pin GPIO_PIN_4
 #define CSN_GPIO_Port GPIOA
-#define MOUNT_HOR_Pin GPIO_PIN_8
-#define MOUNT_HOR_GPIO_Port GPIOA
-#define MOUNT_VERT_Pin GPIO_PIN_9
-#define MOUNT_VERT_GPIO_Port GPIOA
-#define DRV1_PNP1_Pin GPIO_PIN_15
-#define DRV1_PNP1_GPIO_Port GPIOA
-#define DRV1_PNP2_Pin GPIO_PIN_3
+#define DRV1_PNP1_Pin GPIO_PIN_12
+#define DRV1_PNP1_GPIO_Port GPIOB
+#define DRV1_PNP2_Pin GPIO_PIN_13
 #define DRV1_PNP2_GPIO_Port GPIOB
-#define DRV1_NPN1_Pin GPIO_PIN_6
-#define DRV1_NPN1_GPIO_Port GPIOB
-#define DRV1_NPN2_Pin GPIO_PIN_7
-#define DRV1_NPN2_GPIO_Port GPIOB
+#define DRV2_PNP1_Pin GPIO_PIN_14
+#define DRV2_PNP1_GPIO_Port GPIOB
+#define DRV2_PNP2_Pin GPIO_PIN_15
+#define DRV2_PNP2_GPIO_Port GPIOB
+#define DRV1_NPN1_Pin GPIO_PIN_8
+#define DRV1_NPN1_GPIO_Port GPIOA
+#define DRV1_NPN2_Pin GPIO_PIN_9
+#define DRV1_NPN2_GPIO_Port GPIOA
+#define DRV2_NPN1_Pin GPIO_PIN_10
+#define DRV2_NPN1_GPIO_Port GPIOA
+#define DRV2_NPN2_Pin GPIO_PIN_11
+#define DRV2_NPN2_GPIO_Port GPIOA
+#define MOUNT_HOR_Pin GPIO_PIN_6
+#define MOUNT_HOR_GPIO_Port GPIOB
+#define MOUNT_VERT_Pin GPIO_PIN_7
+#define MOUNT_VERT_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

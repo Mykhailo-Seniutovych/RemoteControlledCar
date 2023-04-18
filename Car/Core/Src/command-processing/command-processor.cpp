@@ -17,17 +17,17 @@ void CommandProcessor::processNextCommand() {
 
     if (cmd != CarCommand::None) {
         lastCommand_ = cmd;
-        isMountMoving_ = true;
+        isMoving_ = true;
         ignoredNoneCmdCount_ = 0;
     }
 
-    if (isMountMoving_ && cmd == CarCommand::None && ignoredNoneCmdCount_ < MAX_IGNORED_NONE_COMMANDS) {
+    if (isMoving_ && cmd == CarCommand::None && ignoredNoneCmdCount_ < MAX_IGNORED_NONE_COMMANDS) {
         ++ignoredNoneCmdCount_;
         cmd = lastCommand_;
     } else if (cmd == CarCommand::None) {
         ignoredNoneCmdCount_ = 0;
         lastCommand_ = CarCommand::None;
-        isMountMoving_ = false;
+        isMoving_ = false;
         led_->turnOff();
         driver_->stop();
     }
@@ -63,38 +63,14 @@ void CommandProcessor::processNextCommand() {
         driver_->moveBackward(Speed::Slow);
         led_->turnColorOn(YellowColor);
     }
+
+    else if (cmd == CarCommand::TiltDown) {
+        cameraMount_->rotateDown(1);
+    } else if (cmd == CarCommand::TiltUp) {
+        cameraMount_->rotateUp(1);
+    } else if (cmd == CarCommand::PanRight) {
+        cameraMount_->rotateRight(1);
+    } else if (cmd == CarCommand::PanLeft) {
+        cameraMount_->rotateLeft(1);
+    }
 }
-
-// void CommandProcessor::processNextCommand() {
-//     CarCommand cmd = commandReader_->getNextCommand();
-
-//     if (cmd != CarCommand::None) {
-//         lastCommand_ = cmd;
-//         isMountMoving_ = true;
-//         ignoredNoneCmdCount_ = 0;
-//     }
-
-//     if (isMountMoving_ && cmd == CarCommand::None && ignoredNoneCmdCount_ < MAX_IGNORED_NONE_COMMANDS) {
-//         ++ignoredNoneCmdCount_;
-//         cmd = lastCommand_;
-//     } else if (cmd == CarCommand::None) {
-//         ignoredNoneCmdCount_ = 0;
-//         lastCommand_ = CarCommand::None;
-//         isMountMoving_ = false;
-//         led_->turnOff();
-//     }
-
-//     if (cmd == CarCommand::MoveForwardFast) {
-//         cameraMount_->rotateDown(1);
-//         led_->turnColorOn(TurquoiseColor);
-//     } else if (cmd == CarCommand::MoveBackwardFast) {
-//         cameraMount_->rotateUp(1);
-//         led_->turnColorOn(TurquoiseColor);
-//     } else if (cmd == CarCommand::TurnRight) {
-//         cameraMount_->rotateRight(1);
-//         led_->turnColorOn(YellowColor);
-//     } else if (cmd == CarCommand::TurnLeft) {
-//         cameraMount_->rotateLeft(1);
-//         led_->turnColorOn(YellowColor);
-//     }
-// }

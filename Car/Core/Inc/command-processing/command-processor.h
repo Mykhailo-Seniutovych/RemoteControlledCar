@@ -15,7 +15,7 @@ class CommandProcessor {
 
   private:
     bool isCarMoving_ = false;
-    bool isMountMoving_ = false;
+    bool isMoving_ = false;
     uint16_t ignoredNoneCmdCount_;
 
     Driver *driver_;
