@@ -67,33 +67,18 @@ int appMain() {
 
     auto commandProcessor = CommandProcessor(&driver2, &cameraMount, &commandReader, &led);
 
-    // GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-    // GPIO_InitStruct.Pin = GPIO_PIN_14;
-    // GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-    // GPIO_InitStruct.Pull = GPIO_PULLUP;
-    // GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    // HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
-
-    // GPIO_InitStruct.Pin = GPIO_PIN_15;
-    // GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-    // GPIO_InitStruct.Pull = GPIO_PULLUP;
-    // GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    // HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
-
-    // DRV2_NPN1_CCR = 0;
-    // DRV2_NPN2_CCR = 0;
+    driver1.moveForward(Speed::Fast);
+    driver2.moveForward(Speed::Fast);
+    // HAL_Delay(5000);
+    // driver1.stop();
+    // driver2.stop();
+    HAL_Delay(5000);
+    driver1.moveBackward(Speed::Fast);
+    driver2.moveBackward(Speed::Fast);
+    HAL_Delay(5000);
+    driver1.stop();
+    driver2.stop();
     while (true) {
-        driver1.moveForward(Speed::Fast);
-        driver2.moveForward(Speed::Fast);
-        HAL_Delay(3000);
-        driver1.stop();
-        driver2.stop();
-        HAL_Delay(3000);
-        // commandProcessor.processNextCommand();
-        // HAL_Delay(10);
     }
     return 0;
 }
@@ -160,8 +145,8 @@ void initialize() {
 
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
-    // HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
-    // HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
 
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);

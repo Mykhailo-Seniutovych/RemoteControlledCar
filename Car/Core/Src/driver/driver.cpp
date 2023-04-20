@@ -58,7 +58,7 @@ void Driver::moveForward(Speed speed) {
     HAL_GPIO_WritePin(pnp2Port_, pnp2Pin_, GPIO_PIN_RESET);
 
     // This delay is needed because when the dc motor changes direction instantly, for some reason it can run slower
-    HAL_Delay(500);
+    //HAL_Delay(500);
 
     // Even when the speed is slow, we still need to provide enough stall current for the motor to start first.
     // If we set the needed ARR from the beginning, most likely the motor will not start.
@@ -92,7 +92,7 @@ void Driver::moveBackward(Speed speed) {
     HAL_GPIO_Init(pnp1Port_, &GPIO_InitStruct);
     HAL_GPIO_WritePin(pnp1Port_, pnp1Pin_, GPIO_PIN_RESET);
 
-    HAL_Delay(500);
+    //HAL_Delay(500);
     *pwm_->npn2CCR = *pwm_->ARR;
     if (speed == Speed::Slow) {
         HAL_Delay(100);
