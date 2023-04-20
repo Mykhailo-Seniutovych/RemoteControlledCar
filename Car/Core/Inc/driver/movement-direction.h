@@ -5,7 +5,9 @@
 enum class MovementDirection {
     None,
     Forward,
-    Backward
+    Backward,
+    Right,
+    Left,
 };
 
 #endif

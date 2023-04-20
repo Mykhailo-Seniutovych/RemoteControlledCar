@@ -9,8 +9,8 @@ const Color BlueColor = Color(0, 0, 255);
 const Color YellowColor = Color(255, 255, 0);
 const Color TurquoiseColor = Color(48, 213, 199);
 
-CommandProcessor::CommandProcessor(Driver *driver, CameraMount *cameraMount, CommandReader *commandReader, Led *led)
-    : driver_(driver), cameraMount_(cameraMount), commandReader_(commandReader), led_(led) {}
+CommandProcessor::CommandProcessor(CarController *carController, CameraMount *cameraMount, CommandReader *commandReader, Led *led)
+    : carController_(carController), cameraMount_(cameraMount), commandReader_(commandReader), led_(led) {}
 
 void CommandProcessor::processNextCommand() {
     CarCommand cmd = commandReader_->getNextCommand();
@@ -29,38 +29,38 @@ void CommandProcessor::processNextCommand() {
         lastCommand_ = CarCommand::None;
         isMoving_ = false;
         led_->turnOff();
-        driver_->stop();
+        carController_->stop();
     }
 
     if (cmd == CarCommand::MoveForwardFast) {
-        driver_->moveForward(Speed::Fast);
+        carController_->driveForwardFast();
         led_->turnColorOn(GreenColor);
     } else if (cmd == CarCommand::MoveForwardSlow) {
-        driver_->moveForward(Speed::Slow);
+        carController_->driveForwardSlow();
         led_->turnColorOn(GreenColor);
     }
 
     else if (cmd == CarCommand::MoveBackwardFast) {
-        driver_->moveBackward(Speed::Fast);
+        carController_->driveBackwardFast();
         led_->turnColorOn(WhiteColor);
     } else if (cmd == CarCommand::MoveBackwardSlow) {
-        driver_->moveBackward(Speed::Slow);
+        carController_->driveBackwardSlow();
         led_->turnColorOn(WhiteColor);
     }
 
     else if (cmd == CarCommand::TurnRightFast) {
-        driver_->moveForward(Speed::Fast);
+        carController_->turnRightFast();
         led_->turnColorOn(YellowColor);
     } else if (cmd == CarCommand::TurnRightSlow) {
-        driver_->moveForward(Speed::Slow);
+        carController_->turnRightSlow();
         led_->turnColorOn(YellowColor);
     }
 
     else if (cmd == CarCommand::TurnLeftFast) {
-        driver_->moveBackward(Speed::Fast);
+        carController_->turnLeftFast();
         led_->turnColorOn(YellowColor);
     } else if (cmd == CarCommand::TurnLeftSlow) {
-        driver_->moveBackward(Speed::Slow);
+        carController_->turnLeftSlow();
         led_->turnColorOn(YellowColor);
     }
 

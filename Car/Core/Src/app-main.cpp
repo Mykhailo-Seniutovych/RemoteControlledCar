@@ -2,8 +2,9 @@
 #include "camera/camera-mount.h"
 #include "camera/mount-pwm.h"
 #include "command-processing/command-processor.h"
-#include "driver/driver-pwm.h"
-#include "driver/driver.h"
+#include "driver/car-controller.h"
+#include "driver/dc-driver-pwm.h"
+#include "driver/dc-driver.h"
 #include "led/color.h"
 #include "led/led-pwm.h"
 #include "led/led.h"
@@ -51,11 +52,13 @@ int appMain() {
     initialize();
     HAL_Delay(1000);
 
-    auto driverPwm1 = DriverPwm(&DRV1_NPN1_CCR, &DRV1_NPN2_CCR, &DRV1_ARR);
-    auto driver1 = Driver(DRV1_PNP1_PORT, DRV1_PNP1_PIN, DRV1_PNP2_PORT, DRV1_PNP2_PIN, &driverPwm1);
+    auto leftDriverPwm = DcDriverPwm(&DRV1_NPN1_CCR, &DRV1_NPN2_CCR, &DRV1_ARR);
+    auto leftDriver = DcDriver(DRV1_PNP1_PORT, DRV1_PNP1_PIN, DRV1_PNP2_PORT, DRV1_PNP2_PIN, &leftDriverPwm);
 
-    auto driverPwm2 = DriverPwm(&DRV2_NPN1_CCR, &DRV2_NPN2_CCR, &DRV2_ARR);
-    auto driver2 = Driver(DRV2_PNP1_PORT, DRV2_PNP1_PIN, DRV2_PNP2_PORT, DRV2_PNP2_PIN, &driverPwm2);
+    auto rightDriverPwm = DcDriverPwm(&DRV2_NPN1_CCR, &DRV2_NPN2_CCR, &DRV2_ARR);
+    auto rightDriver = DcDriver(DRV2_PNP1_PORT, DRV2_PNP1_PIN, DRV2_PNP2_PORT, DRV2_PNP2_PIN, &rightDriverPwm);
+
+    auto carController = CarController(&leftDriver, &rightDriver);
 
     auto mountPwm = MountPwm(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
     auto cameraMount = CameraMount(&mountPwm, MOUNT_MIN_PWM, MOUNT_MAX_PWM);
@@ -65,19 +68,18 @@ int appMain() {
     LedPwm ledPwm(&LED_RED_CCR, &LED_GREEN_CCR, &LED_BLUE_CCR);
     Led led(&ledPwm);
 
-    auto commandProcessor = CommandProcessor(&driver2, &cameraMount, &commandReader, &led);
+    auto commandProcessor = CommandProcessor(&carController, &cameraMount, &commandReader, &led);
 
-    driver1.moveForward(Speed::Fast);
-    driver2.moveForward(Speed::Fast);
+    carController.driveForwardFast();
+    HAL_Delay(5000);
+    // carController.driveBackwardFast();
     // HAL_Delay(5000);
-    // driver1.stop();
-    // driver2.stop();
+    carController.driveForwardSlow();
     HAL_Delay(5000);
-    driver1.moveBackward(Speed::Fast);
-    driver2.moveBackward(Speed::Fast);
+    carController.driveBackwardSlow();
     HAL_Delay(5000);
-    driver1.stop();
-    driver2.stop();
+    carController.stop();
+
     while (true) {
     }
     return 0;

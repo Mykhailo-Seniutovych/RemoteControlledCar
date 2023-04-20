@@ -67,8 +67,9 @@ Core/Src/command-processing/command-reader.cpp \
 Core/Src/led/color.cpp \
 Core/Src/led/led-pwm.cpp \
 Core/Src/led/led.cpp \
-Core/Src/driver/driver-pwm.cpp \
-Core/Src/driver/driver.cpp
+Core/Src/driver/dc-driver-pwm.cpp \
+Core/Src/driver/dc-driver.cpp \
+Core/Src/driver/car-controller.cpp
 
 # ASM sources
 ASM_SOURCES =  \

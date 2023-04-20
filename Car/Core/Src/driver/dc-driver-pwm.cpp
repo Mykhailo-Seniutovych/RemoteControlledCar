@@ -1,6 +1,6 @@
-#include "driver/driver-pwm.h"
+#include "driver/dc-driver-pwm.h"
 
-DriverPwm::DriverPwm(
+DcDriverPwm::DcDriverPwm(
     volatile uint32_t *npn1CCR,
     volatile uint32_t *npn2CCR,
     volatile uint32_t *ARR
