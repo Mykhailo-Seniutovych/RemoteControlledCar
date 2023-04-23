@@ -1,6 +1,8 @@
 #include "driver/dc-driver.h"
 #include "stm32f1xx_hal.h"
 
+float SLOW_CCR_COEFFICIENT = 0.35f;
+
 DcDriver::DcDriver(
     GPIO_TypeDef *pnp1Port,
     uint16_t pnp1Pin,
@@ -56,7 +58,7 @@ void DcDriver::moveForward(Speed speed) {
     *pwm_->npn1CCR = *pwm_->ARR;
     if (speed == Speed::Slow) {
         HAL_Delay(100);
-        *pwm_->npn1CCR = (*pwm_->ARR) * 0.35;
+        *pwm_->npn1CCR = (*pwm_->ARR) * SLOW_CCR_COEFFICIENT;
     }
 }
 
@@ -80,6 +82,6 @@ void DcDriver::moveBackward(Speed speed) {
     *pwm_->npn2CCR = *pwm_->ARR;
     if (speed == Speed::Slow) {
         HAL_Delay(100);
-        *pwm_->npn2CCR = (*pwm_->ARR) * 0.35;
+        *pwm_->npn2CCR = (*pwm_->ARR) * SLOW_CCR_COEFFICIENT;
     }
 }

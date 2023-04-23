@@ -2,22 +2,25 @@
 #define __CAR_CONTROL_CAR_COMMAND_H
 
 enum class CarCommand {
-    MoveForwardFast = 10,
-    MoveForwardSlow = 20,
+    None = 0,
+    Stop = 10,
 
-    MoveBackwardFast = 30,
-    MoveBackwardSlow = 40,
+    MoveForwardFast = 20,
+    MoveForwardSlow = 30,
 
-    TurnRightFast = 50,
-    TurnRightSlow = 60,
+    MoveBackwardFast = 40,
+    MoveBackwardSlow = 50,
 
-    TurnLeftFast = 70,
-    TurnLeftSlow = 80,
+    TurnRightFast = 60,
+    TurnRightSlow = 70,
 
-    TiltUp = 90,
-    TiltDown = 100,
-    PanRight = 110,
-    PanLeft = 120
+    TurnLeftFast = 80,
+    TurnLeftSlow = 90,
+
+    TiltUp = 100,
+    TiltDown = 110,
+    PanRight = 120,
+    PanLeft = 130
 };
 
 #endif

@@ -3,8 +3,7 @@
 #include "driver/speed.h"
 #include "stm32f1xx_hal.h"
 
-// Small delay to avoid changing direction instantly
-static uint16_t MOVEMENT_CHANGE_DELAY = 500;
+
 
 CarController::CarController(
     DcDriver *leftDriver,
@@ -15,7 +14,7 @@ void CarController::driveForwardFast() {
     if (!isMovementChange(MovementDirection::Forward, Speed::Fast))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveForward(Speed::Fast);
     rightDriver_->moveForward(Speed::Fast);
@@ -28,7 +27,7 @@ void CarController::driveForwardSlow() {
     if (!isMovementChange(MovementDirection::Forward, Speed::Slow))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveForward(Speed::Slow);
     rightDriver_->moveForward(Speed::Slow);
@@ -41,7 +40,7 @@ void CarController::driveBackwardFast() {
     if (!isMovementChange(MovementDirection::Backward, Speed::Fast))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveBackward(Speed::Fast);
     rightDriver_->moveBackward(Speed::Fast);
@@ -53,7 +52,7 @@ void CarController::driveBackwardSlow() {
     if (!isMovementChange(MovementDirection::Backward, Speed::Slow))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveBackward(Speed::Slow);
     rightDriver_->moveBackward(Speed::Slow);
@@ -66,7 +65,7 @@ void CarController::turnRightFast() {
     if (!isMovementChange(MovementDirection::Right, Speed::Fast))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveForward(Speed::Fast);
     rightDriver_->moveBackward(Speed::Fast);
@@ -78,7 +77,7 @@ void CarController::turnRightSlow() {
     if (!isMovementChange(MovementDirection::Right, Speed::Slow))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveForward(Speed::Slow);
     rightDriver_->moveBackward(Speed::Slow);
@@ -91,7 +90,7 @@ void CarController::turnLeftFast() {
     if (!isMovementChange(MovementDirection::Left, Speed::Fast))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveBackward(Speed::Fast);
     rightDriver_->moveForward(Speed::Fast);
@@ -103,7 +102,7 @@ void CarController::turnLeftSlow() {
     if (!isMovementChange(MovementDirection::Left, Speed::Slow))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->moveBackward(Speed::Slow);
     rightDriver_->moveForward(Speed::Slow);
@@ -116,7 +115,7 @@ void CarController::stop() {
     if (!isMovementChange(MovementDirection::None, Speed::None))
         return;
 
-    HAL_Delay(MOVEMENT_CHANGE_DELAY);
+    delayIfMoving();
 
     leftDriver_->stop();
     rightDriver_->stop();

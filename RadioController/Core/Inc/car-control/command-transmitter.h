@@ -9,6 +9,10 @@ class CommandTransmitter {
   public:
     void initializeTransmission();
     void transmitCommand(JoystickState rightState, JoystickState leftState);
+
+  private:
+    CarCommand lastCmd_ = CarCommand::None;
+    bool lastCmdSuccess_ = false;
 };
 
 #endif

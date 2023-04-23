@@ -11,10 +11,9 @@
 class CommandProcessor {
   public:
     CommandProcessor(CarController *carController, CameraMount *cameraMount, CommandReader *commandReader, Led *led);
-    virtual void processNextCommand();
+    void processNextCommand();
 
   private:
-    bool isCarMoving_ = false;
     bool isMoving_ = false;
     uint16_t ignoredNoneCmdCount_;
 
@@ -23,6 +22,8 @@ class CommandProcessor {
     CommandReader *commandReader_;
     Led *led_;
     CarCommand lastCommand_;
+
+    void stopMovement();
 };
 
 #endif

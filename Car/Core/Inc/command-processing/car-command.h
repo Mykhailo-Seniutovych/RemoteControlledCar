@@ -3,23 +3,24 @@
 
 enum class CarCommand {
     None = 0,
+    Stop = 10,
 
-    MoveForwardFast = 10,
-    MoveForwardSlow = 20,
+    MoveForwardFast = 20,
+    MoveForwardSlow = 30,
 
-    MoveBackwardFast = 30,
-    MoveBackwardSlow = 40,
+    MoveBackwardFast = 40,
+    MoveBackwardSlow = 50,
 
-    TurnRightFast = 50,
-    TurnRightSlow = 60,
+    TurnRightFast = 60,
+    TurnRightSlow = 70,
 
-    TurnLeftFast = 70,
-    TurnLeftSlow = 80,
+    TurnLeftFast = 80,
+    TurnLeftSlow = 90,
 
-    TiltUp = 90,
-    TiltDown = 100,
-    PanRight = 110,
-    PanLeft = 120
+    TiltUp = 100,
+    TiltDown = 110,
+    PanRight = 120,
+    PanLeft = 130
 };
 
 #endif

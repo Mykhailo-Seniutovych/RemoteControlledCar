@@ -48,9 +48,7 @@ static void moveForward();
 static void moveBackward();
 
 int appMain() {
-    // HAL_Delay(1000);
-    initialize();
-    HAL_Delay(1000);
+initialize();
 
     auto leftDriverPwm = DcDriverPwm(&DRV1_NPN1_CCR, &DRV1_NPN2_CCR, &DRV1_ARR);
     auto leftDriver = DcDriver(DRV1_PNP1_PORT, DRV1_PNP1_PIN, DRV1_PNP2_PORT, DRV1_PNP2_PIN, &leftDriverPwm);
@@ -69,81 +67,16 @@ int appMain() {
     Led led(&ledPwm);
 
     auto commandProcessor = CommandProcessor(&carController, &cameraMount, &commandReader, &led);
-
-    carController.driveForwardFast();
-    HAL_Delay(5000);
-    // carController.driveBackwardFast();
-    // HAL_Delay(5000);
-    carController.driveForwardSlow();
-    HAL_Delay(5000);
-    carController.driveBackwardSlow();
-    HAL_Delay(5000);
-    carController.stop();
-
     while (true) {
+       commandProcessor.processNextCommand();
     }
     return 0;
-}
-
-static void stop() {
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
-
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-    GPIO_InitStruct.Pin = GPIO_PIN_14;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    DRV1_NPN2_CCR = 0;
-
-    GPIO_InitStruct.Pin = GPIO_PIN_15;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    DRV1_NPN1_CCR = 0;
-}
-static void moveForward() {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
-    GPIO_InitStruct.Pin = GPIO_PIN_14;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    DRV2_NPN2_CCR = 0;
-
-    GPIO_InitStruct.Pin = GPIO_PIN_15;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
-    DRV2_NPN1_CCR = 255;
-}
-static void moveBackward() {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
-
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
-    GPIO_InitStruct.Pin = GPIO_PIN_15;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_PULLDOWN;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    DRV1_NPN1_CCR = 0;
-
-    GPIO_InitStruct.Pin = GPIO_PIN_14;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
-    DRV1_NPN2_CCR = 255;
 }
 
 void initialize() {
     nrf24_Init();
     nrf24_EnterRxMode();
-    HAL_Delay(2000);
+    HAL_Delay(1000);
 
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);

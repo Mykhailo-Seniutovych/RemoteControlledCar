@@ -7,42 +7,52 @@ void CommandTransmitter::initializeTransmission() {
 }
 
 void CommandTransmitter::transmitCommand(JoystickState rightState, JoystickState leftState) {
-    uint8_t cmd = 0;
+    CarCommand cmd = CarCommand::None;
+
     if (isBtnPressed(rightState) && isForward(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::MoveForwardFast);
+        cmd = CarCommand::MoveForwardFast;
     } else if (isForward(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::MoveForwardSlow);
+        cmd = CarCommand::MoveForwardSlow;
     }
 
     else if (isBtnPressed(rightState) && isBackward(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::MoveBackwardFast);
+        cmd = CarCommand::MoveBackwardFast;
     } else if (isBackward(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::MoveBackwardSlow);
+        cmd = CarCommand::MoveBackwardSlow;
     }
 
     else if (isBtnPressed(rightState) && isRight(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::TurnRightFast);
+        cmd = CarCommand::TurnRightFast;
     } else if (isRight(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::TurnRightSlow);
+        cmd = CarCommand::TurnRightSlow;
     }
 
     else if (isBtnPressed(rightState) && isLeft(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::TurnLeftFast);
+        cmd = CarCommand::TurnLeftFast;
     } else if (isLeft(rightState)) {
-        cmd = static_cast<uint8_t>(CarCommand::TurnLeftSlow);
+        cmd = CarCommand::TurnLeftSlow;
     }
 
     else if (isForward(leftState)) {
-        cmd = static_cast<uint8_t>(CarCommand::TiltDown);
+        cmd = CarCommand::TiltDown;
     } else if (isBackward(leftState)) {
-        cmd = static_cast<uint8_t>(CarCommand::TiltUp);
+        cmd = CarCommand::TiltUp;
     } else if (isRight(leftState)) {
-        cmd = static_cast<uint8_t>(CarCommand::PanRight);
+        cmd = CarCommand::PanRight;
     } else if (isLeft(leftState)) {
-        cmd = static_cast<uint8_t>(CarCommand::PanLeft);
+        cmd = CarCommand::PanLeft;
     }
 
-    if (cmd > 0) {
-        nrf24_TransmitData(&cmd, 1);
+    if (cmd == CarCommand::None &&
+        lastCmd_ != CarCommand::None &&
+        (lastCmd_ != CarCommand::Stop || !lastCmdSuccess_)) {
+        cmd = CarCommand::Stop;
     }
+
+    if (cmd != CarCommand::None) {
+        uint8_t cmdNumber = static_cast<uint8_t>(cmd);
+        lastCmdSuccess_ = nrf24_TransmitData(&cmdNumber, 1);
+    }
+
+    lastCmd_ = cmd;
 }
