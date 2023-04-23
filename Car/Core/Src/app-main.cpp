@@ -42,13 +42,16 @@ extern TIM_HandleTypeDef htim4;
 #define LED_GREEN_CCR htim2.Instance->CCR2
 #define LED_BLUE_CCR htim2.Instance->CCR3
 
-static void initialize();
+static void initializePWM();
 static void stop();
 static void moveForward();
 static void moveBackward();
 
 int appMain() {
-initialize();
+    auto commandReceiver = CommandReceiver();
+
+    commandReceiver.initializeReceiver();
+    initializePWM();
 
     auto leftDriverPwm = DcDriverPwm(&DRV1_NPN1_CCR, &DRV1_NPN2_CCR, &DRV1_ARR);
     auto leftDriver = DcDriver(DRV1_PNP1_PORT, DRV1_PNP1_PIN, DRV1_PNP2_PORT, DRV1_PNP2_PIN, &leftDriverPwm);
@@ -61,23 +64,18 @@ initialize();
     auto mountPwm = MountPwm(&MOUNT_HOR_CCR, &MOUNT_VER_CCR, &MOUNT_ARR);
     auto cameraMount = CameraMount(&mountPwm, MOUNT_MIN_PWM, MOUNT_MAX_PWM);
 
-    CommandReader commandReader;
-
     LedPwm ledPwm(&LED_RED_CCR, &LED_GREEN_CCR, &LED_BLUE_CCR);
     Led led(&ledPwm);
 
-    auto commandProcessor = CommandProcessor(&carController, &cameraMount, &commandReader, &led);
+    auto commandProcessor = CommandProcessor(&carController, &cameraMount, &led);
     while (true) {
-       commandProcessor.processNextCommand();
+        auto cmd = commandReceiver.getNextCommand();
+        commandProcessor.processCommand(cmd);
     }
     return 0;
 }
 
-void initialize() {
-    nrf24_Init();
-    nrf24_EnterRxMode();
-    HAL_Delay(1000);
-
+void initializePWM() {
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);

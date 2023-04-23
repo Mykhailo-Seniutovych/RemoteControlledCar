@@ -3,15 +3,15 @@
 
 #include "camera/camera-mount.h"
 #include "command-processing/car-command.h"
-#include "command-processing/command-reader.h"
+#include "command-processing/command-receiver.h"
 #include "driver/car-controller.h"
 #include "led/led.h"
 #include <stdint.h>
 
 class CommandProcessor {
   public:
-    CommandProcessor(CarController *carController, CameraMount *cameraMount, CommandReader *commandReader, Led *led);
-    void processNextCommand();
+    CommandProcessor(CarController *carController, CameraMount *cameraMount, Led *led);
+    void processCommand(CarCommand cmd);
 
   private:
     bool isMoving_ = false;
@@ -19,7 +19,6 @@ class CommandProcessor {
 
     CarController *carController_;
     CameraMount *cameraMount_;
-    CommandReader *commandReader_;
     Led *led_;
     CarCommand lastCommand_;
 

@@ -8,12 +8,10 @@ const Color RedColor = Color(255, 0, 0);
 const Color GreenColor = Color(0, 255, 0);
 const Color AmberColor = Color(255, 191, 0);
 
-CommandProcessor::CommandProcessor(CarController *carController, CameraMount *cameraMount, CommandReader *commandReader, Led *led)
-    : carController_(carController), cameraMount_(cameraMount), commandReader_(commandReader), led_(led) {}
+CommandProcessor::CommandProcessor(CarController *carController, CameraMount *cameraMount, Led *led)
+    : carController_(carController), cameraMount_(cameraMount), led_(led) {}
 
-void CommandProcessor::processNextCommand() {
-    CarCommand cmd = commandReader_->getNextCommand();
-
+void CommandProcessor::processCommand(CarCommand cmd) {
     if (cmd != CarCommand::None) {
         lastCommand_ = cmd;
         ignoredNoneCmdCount_ = 0;

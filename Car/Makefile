@@ -63,7 +63,7 @@ Core/Src/nrf24/nrf24.cpp \
 Core/Src/camera/camera-mount.cpp \
 Core/Src/camera/mount-pwm.cpp \
 Core/Src/command-processing/command-processor.cpp \
-Core/Src/command-processing/command-reader.cpp \
+Core/Src/command-processing/command-receiver.cpp \
 Core/Src/led/color.cpp \
 Core/Src/led/led-pwm.cpp \
 Core/Src/led/led.cpp \
