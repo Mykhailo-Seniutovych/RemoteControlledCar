@@ -8,7 +8,6 @@
 #include "led/color.h"
 #include "led/led-pwm.h"
 #include "led/led.h"
-#include "nrf24/nrf24.h"
 #include "stm32f1xx_hal.h"
 
 extern SPI_HandleTypeDef hspi1;
@@ -43,9 +42,6 @@ extern TIM_HandleTypeDef htim4;
 #define LED_BLUE_CCR htim2.Instance->CCR3
 
 static void initializePWM();
-static void stop();
-static void moveForward();
-static void moveBackward();
 
 int appMain() {
     auto commandReceiver = CommandReceiver();
