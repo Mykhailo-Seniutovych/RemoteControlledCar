@@ -6,10 +6,10 @@
 #include <stm32f1xx_hal.h>
 
 // GPIO
-#define CSN_PORT GPIOA
-#define CSN_PIN GPIO_PIN_4
-#define CE_PORT GPIOA
-#define CE_PIN GPIO_PIN_3
+#define CSN_PORT GPIOB
+#define CSN_PIN GPIO_PIN_0
+#define CE_PORT GPIOB
+#define CE_PIN GPIO_PIN_1
 
 // SPI
 extern SPI_HandleTypeDef hspi1;

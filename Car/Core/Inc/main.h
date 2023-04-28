@@ -69,10 +69,10 @@ void Error_Handler(void);
 #define GREEN_PWM_GPIO_Port GPIOA
 #define BLUE_PWM_Pin GPIO_PIN_2
 #define BLUE_PWM_GPIO_Port GPIOA
-#define CE_Pin GPIO_PIN_3
-#define CE_GPIO_Port GPIOA
-#define CSN_Pin GPIO_PIN_4
-#define CSN_GPIO_Port GPIOA
+#define CSN_Pin GPIO_PIN_0
+#define CSN_GPIO_Port GPIOB
+#define CE_Pin GPIO_PIN_1
+#define CE_GPIO_Port GPIOB
 #define DRV1_PNP1_Pin GPIO_PIN_12
 #define DRV1_PNP1_GPIO_Port GPIOB
 #define DRV1_PNP2_Pin GPIO_PIN_13
