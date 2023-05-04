@@ -20,7 +20,7 @@ class JoystickReader {
     uint16_t readAdcValue(uint32_t channel);
     int16_t getScoreFromAdcValue(uint16_t adcValue);
     JoystickState getVertMovementFromAdcValue(uint16_t adcValue);
-    JoystickState getHorMovementFromAdcValue(uint16_t adcValue);
+    JoystickState getHorMovementFromAdcValue(uint16_t horAdcValue, uint16_t vertAdcValue);
 };
 
 #endif

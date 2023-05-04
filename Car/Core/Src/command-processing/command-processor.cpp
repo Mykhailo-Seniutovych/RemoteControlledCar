@@ -48,22 +48,32 @@ void CommandProcessor::processCommand(CarCommand cmd) {
         isMoving_ = true;
     }
 
-    else if (cmd == CarCommand::TurnRightFast) {
-        carController_->turnRightFast();
+    else if (cmd == CarCommand::SpinRight) {
+        carController_->spinRight();
         led_->turnColorOn(AmberColor);
         isMoving_ = true;
-    } else if (cmd == CarCommand::TurnRightSlow) {
-        carController_->turnRightSlow();
+    } else if (cmd == CarCommand::SpinLeft) {
+        carController_->spinLeft();
         led_->turnColorOn(AmberColor);
         isMoving_ = true;
     }
 
-    else if (cmd == CarCommand::TurnLeftFast) {
-        carController_->turnLeftFast();
+    else if (cmd == CarCommand::TurnRightForward) {
+        carController_->turnRightForward();
         led_->turnColorOn(AmberColor);
         isMoving_ = true;
-    } else if (cmd == CarCommand::TurnLeftSlow) {
-        carController_->turnLeftSlow();
+    } else if (cmd == CarCommand::TurnRightBackward) {
+        carController_->turnRightBackward();
+        led_->turnColorOn(AmberColor);
+        isMoving_ = true;
+    }
+
+    else if (cmd == CarCommand::TurnLeftForward) {
+        carController_->turnLeftForward();
+        led_->turnColorOn(AmberColor);
+        isMoving_ = true;
+    } else if (cmd == CarCommand::TurnLeftBackward) {
+        carController_->turnLeftBackward();
         led_->turnColorOn(AmberColor);
         isMoving_ = true;
     }

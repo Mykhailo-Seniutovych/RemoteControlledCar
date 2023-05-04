@@ -23,11 +23,13 @@ class CarController {
     void driveBackwardFast();
     void driveBackwardSlow();
 
-    void turnRightFast();
-    void turnRightSlow();
+    void spinRight();
+    void spinLeft();
 
-    void turnLeftFast();
-    void turnLeftSlow();
+    void turnRightForward();
+    void turnRightBackward();
+    void turnLeftForward();
+    void turnLeftBackward();
 
     void stop();
 

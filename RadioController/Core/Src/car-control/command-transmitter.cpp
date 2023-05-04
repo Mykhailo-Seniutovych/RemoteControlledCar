@@ -9,7 +9,25 @@ void CommandTransmitter::initializeTransmission() {
 void CommandTransmitter::transmitCommand(JoystickState rightState, JoystickState leftState) {
     CarCommand cmd = CarCommand::None;
 
-    if (isBtnPressed(rightState) && isForward(rightState)) {
+    if (isBtnPressed(rightState) && isRight(rightState)) {
+        cmd = CarCommand::SpinRight;
+    } else if (isBtnPressed(rightState) && isLeft(rightState)) {
+        cmd = CarCommand::SpinLeft;
+    }
+
+    else if (isRight(rightState) && isForward(rightState)) {
+        cmd = CarCommand::TurnRightForward;
+    } else if (isRight(rightState) && isBackward(rightState)) {
+        cmd = CarCommand::TurnRightBackward;
+    }
+
+    else if (isLeft(rightState) && isForward(rightState)) {
+        cmd = CarCommand::TurnLeftForward;
+    } else if (isLeft(rightState) && isBackward(rightState)) {
+        cmd = CarCommand::TurnLeftBackward;
+    }
+
+    else if (isBtnPressed(rightState) && isForward(rightState)) {
         cmd = CarCommand::MoveForwardFast;
     } else if (isForward(rightState)) {
         cmd = CarCommand::MoveForwardSlow;
@@ -21,26 +39,14 @@ void CommandTransmitter::transmitCommand(JoystickState rightState, JoystickState
         cmd = CarCommand::MoveBackwardSlow;
     }
 
-    else if (isBtnPressed(rightState) && isRight(rightState)) {
-        cmd = CarCommand::TurnRightFast;
-    } else if (isRight(rightState)) {
-        cmd = CarCommand::TurnRightSlow;
-    }
-
-    else if (isBtnPressed(rightState) && isLeft(rightState)) {
-        cmd = CarCommand::TurnLeftFast;
-    } else if (isLeft(rightState)) {
-        cmd = CarCommand::TurnLeftSlow;
-    }
-
-    else if (isForward(leftState)) {
-        cmd = CarCommand::TiltDown;
-    } else if (isBackward(leftState)) {
-        cmd = CarCommand::TiltUp;
-    } else if (isRight(leftState)) {
+    else if (isRight(leftState)) {
         cmd = CarCommand::PanRight;
     } else if (isLeft(leftState)) {
         cmd = CarCommand::PanLeft;
+    } else if (isForward(leftState)) {
+        cmd = CarCommand::TiltDown;
+    } else if (isBackward(leftState)) {
+        cmd = CarCommand::TiltUp;
     }
 
     if (cmd == CarCommand::None &&

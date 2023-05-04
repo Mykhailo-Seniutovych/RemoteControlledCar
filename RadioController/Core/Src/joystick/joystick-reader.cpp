@@ -5,6 +5,8 @@
 #define MOVEMENT_MIN_BOUNDARY 1024
 #define MOVEMENT_MAX_BOUNDARY 3072
 
+#define HOR_JOYSTICK_
+
 JoystickReader::JoystickReader(
     uint32_t vertChannel,
     uint32_t horChannel,
@@ -22,18 +24,23 @@ JoystickState JoystickReader::readState() {
     uint16_t vertAdcValue = readAdcValue(vertChannel_);
     uint16_t horAdcValue = readAdcValue(horChannel_);
 
-    uint16_t vertScore = getScoreFromAdcValue(vertAdcValue);
-    uint16_t horScore = getScoreFromAdcValue(horAdcValue);
+    // uint16_t vertScore = getScoreFromAdcValue(vertAdcValue);
+    // uint16_t horScore = getScoreFromAdcValue(horAdcValue);
 
-    if (vertScore == 0 && horScore == 0) {
+    auto isCentralPosition =
+        horAdcValue > MOVEMENT_MIN_BOUNDARY && horAdcValue < MOVEMENT_MAX_BOUNDARY &&
+        vertAdcValue > MOVEMENT_MIN_BOUNDARY && vertAdcValue < MOVEMENT_MAX_BOUNDARY;
+
+    if (isCentralPosition) {
         return btnPressed ? JoystickState::BtnPressed : JoystickState::None;
     }
 
+    auto isVerticalMovement = horAdcValue > 1747 && horAdcValue < 2347;
     JoystickState state;
-    if (vertScore >= horScore) {
+    if (isVerticalMovement) {
         state = getVertMovementFromAdcValue(vertAdcValue);
     } else {
-        state = getHorMovementFromAdcValue(horAdcValue);
+        state = getHorMovementFromAdcValue(horAdcValue, vertAdcValue);
     }
 
     if (btnPressed) {
@@ -68,6 +75,11 @@ int16_t JoystickReader::getScoreFromAdcValue(uint16_t adcValue) {
 JoystickState JoystickReader::getVertMovementFromAdcValue(uint16_t adcValue) {
     return adcValue > ADC_RESOLUTION / 2 ? JoystickState::Forward : JoystickState::Backward;
 }
-JoystickState JoystickReader::getHorMovementFromAdcValue(uint16_t adcValue) {
-    return adcValue > ADC_RESOLUTION / 2 ? JoystickState::Right : JoystickState::Left;
+
+JoystickState JoystickReader::getHorMovementFromAdcValue(uint16_t horAdcValue, uint16_t vertAdcValue) {
+    auto state = horAdcValue > ADC_RESOLUTION / 2 ? JoystickState::Right : JoystickState::Left;
+    // for horizontal movement, we need to know vertical state as well, so the car can drive forward or backward when making a turn
+    auto verticalState = vertAdcValue > 1947 ? JoystickState::Forward : JoystickState::Backward;
+    state = state | verticalState;
+    return state;
 }

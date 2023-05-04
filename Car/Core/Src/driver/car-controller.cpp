@@ -3,10 +3,9 @@
 #include "driver/speed.h"
 #include "stm32f1xx_hal.h"
 
-
 float FAST_SPEED_COEFFICIENT = 1.0f;
 float SLOW_SPEED_COEFFICIENT = 0.4f;
-float TURN_SPEED_COEFFICIENT = 0.7f;
+float TURN_SPEED_COEFFICIENT = 0.8f;
 
 CarController::CarController(
     DcDriver *leftDriver,
@@ -63,8 +62,8 @@ void CarController::driveBackwardSlow() {
     currentSpeedCoefficient_ = SLOW_SPEED_COEFFICIENT;
 }
 
-void CarController::turnRightFast() {
-    if (!isMovementChange(MovementDirection::Right, FAST_SPEED_COEFFICIENT))
+void CarController::spinRight() {
+    if (!isMovementChange(MovementDirection::SpinRight, FAST_SPEED_COEFFICIENT))
         return;
 
     delayIfMoving();
@@ -72,24 +71,11 @@ void CarController::turnRightFast() {
     leftDriver_->moveForward(FAST_SPEED_COEFFICIENT);
     rightDriver_->moveBackward(FAST_SPEED_COEFFICIENT);
 
-    currentDirection_ = MovementDirection::Right;
+    currentDirection_ = MovementDirection::SpinRight;
     currentSpeedCoefficient_ = FAST_SPEED_COEFFICIENT;
 }
-void CarController::turnRightSlow() {
-    if (!isMovementChange(MovementDirection::Right, TURN_SPEED_COEFFICIENT))
-        return;
-
-    delayIfMoving();
-
-    leftDriver_->moveForward(TURN_SPEED_COEFFICIENT);
-    rightDriver_->stop();
-
-    currentDirection_ = MovementDirection::Right;
-    currentSpeedCoefficient_ = TURN_SPEED_COEFFICIENT;
-}
-
-void CarController::turnLeftFast() {
-    if (!isMovementChange(MovementDirection::Left, FAST_SPEED_COEFFICIENT))
+void CarController::spinLeft() {
+    if (!isMovementChange(MovementDirection::SpinLeft, FAST_SPEED_COEFFICIENT))
         return;
 
     delayIfMoving();
@@ -97,11 +83,37 @@ void CarController::turnLeftFast() {
     leftDriver_->moveBackward(FAST_SPEED_COEFFICIENT);
     rightDriver_->moveForward(FAST_SPEED_COEFFICIENT);
 
-    currentDirection_ = MovementDirection::Left;
+    currentDirection_ = MovementDirection::SpinLeft;
     currentSpeedCoefficient_ = FAST_SPEED_COEFFICIENT;
 }
-void CarController::turnLeftSlow() {
-    if (!isMovementChange(MovementDirection::Left, TURN_SPEED_COEFFICIENT))
+
+void CarController::turnRightForward() {
+    if (!isMovementChange(MovementDirection::RightForward, TURN_SPEED_COEFFICIENT))
+        return;
+
+    delayIfMoving();
+
+    leftDriver_->moveForward(TURN_SPEED_COEFFICIENT);
+    rightDriver_->stop();
+
+    currentDirection_ = MovementDirection::RightForward;
+    currentSpeedCoefficient_ = TURN_SPEED_COEFFICIENT;
+}
+void CarController::turnRightBackward() {
+    if (!isMovementChange(MovementDirection::RightBackward, TURN_SPEED_COEFFICIENT))
+        return;
+
+    delayIfMoving();
+
+    leftDriver_->moveBackward(TURN_SPEED_COEFFICIENT);
+    rightDriver_->stop();
+
+    currentDirection_ = MovementDirection::RightBackward;
+    currentSpeedCoefficient_ = TURN_SPEED_COEFFICIENT;
+}
+
+void CarController::turnLeftForward() {
+    if (!isMovementChange(MovementDirection::LeftForward, TURN_SPEED_COEFFICIENT))
         return;
 
     delayIfMoving();
@@ -109,7 +121,19 @@ void CarController::turnLeftSlow() {
     leftDriver_->stop();
     rightDriver_->moveForward(TURN_SPEED_COEFFICIENT);
 
-    currentDirection_ = MovementDirection::Left;
+    currentDirection_ = MovementDirection::LeftForward;
+    currentSpeedCoefficient_ = TURN_SPEED_COEFFICIENT;
+}
+void CarController::turnLeftBackward() {
+    if (!isMovementChange(MovementDirection::LeftBackward, TURN_SPEED_COEFFICIENT))
+        return;
+
+    delayIfMoving();
+
+    leftDriver_->stop();
+    rightDriver_->moveBackward(TURN_SPEED_COEFFICIENT);
+
+    currentDirection_ = MovementDirection::LeftForward;
     currentSpeedCoefficient_ = TURN_SPEED_COEFFICIENT;
 }
 
