@@ -21,21 +21,21 @@ extern TIM_HandleTypeDef htim4;
 #define MOUNT_MIN_PWM 0.025f
 #define MOUNT_MAX_PWM 0.125f
 
-#define DRV1_PNP1_PORT GPIOB
-#define DRV1_PNP1_PIN GPIO_PIN_12
-#define DRV1_PNP2_PORT GPIOB
-#define DRV1_PNP2_PIN GPIO_PIN_13
-#define DRV1_NPN1_CCR htim1.Instance->CCR1
-#define DRV1_NPN2_CCR htim1.Instance->CCR2
-#define DRV1_ARR htim1.Instance->ARR
+#define DRV_RIGHT_PNP1_PORT GPIOB
+#define DRV_RIGHT_PNP1_PIN GPIO_PIN_12
+#define DRV_RIGHT_PNP2_PORT GPIOB
+#define DRV_RIGHT_PNP2_PIN GPIO_PIN_13
+#define DRV_RIGHT_NPN1_CCR htim1.Instance->CCR1
+#define DRV_RIGHT_NPN2_CCR htim1.Instance->CCR2
+#define DRV_RIGHT_ARR htim1.Instance->ARR
 
-#define DRV2_PNP1_PORT GPIOB
-#define DRV2_PNP1_PIN GPIO_PIN_14
-#define DRV2_PNP2_PORT GPIOB
-#define DRV2_PNP2_PIN GPIO_PIN_15
-#define DRV2_NPN1_CCR htim1.Instance->CCR3
-#define DRV2_NPN2_CCR htim1.Instance->CCR4
-#define DRV2_ARR htim1.Instance->ARR
+#define DRV_LEFT_PNP1_PORT GPIOB
+#define DRV_LEFT_PNP1_PIN GPIO_PIN_14
+#define DRV_LEFT_PNP2_PORT GPIOB
+#define DRV_LEFT_PNP2_PIN GPIO_PIN_15
+#define DRV_LEFT_NPN1_CCR htim1.Instance->CCR3
+#define DRV_LEFT_NPN2_CCR htim1.Instance->CCR4
+#define DRV_LEFT_ARR htim1.Instance->ARR
 
 #define LED_RED_CCR htim2.Instance->CCR1
 #define LED_GREEN_CCR htim2.Instance->CCR2
@@ -49,11 +49,11 @@ int appMain() {
     commandReceiver.initializeReceiver();
     initializePWM();
 
-    auto leftDriverPwm = DcDriverPwm(&DRV1_NPN1_CCR, &DRV1_NPN2_CCR, &DRV1_ARR);
-    auto leftDriver = DcDriver(DRV1_PNP1_PORT, DRV1_PNP1_PIN, DRV1_PNP2_PORT, DRV1_PNP2_PIN, &leftDriverPwm);
+    auto leftDriverPwm = DcDriverPwm(&DRV_LEFT_NPN1_CCR, &DRV_LEFT_NPN2_CCR, &DRV_LEFT_ARR);
+    auto leftDriver = DcDriver(DRV_LEFT_PNP1_PORT, DRV_LEFT_PNP1_PIN, DRV_LEFT_PNP2_PORT, DRV_LEFT_PNP2_PIN, &leftDriverPwm);
 
-    auto rightDriverPwm = DcDriverPwm(&DRV2_NPN1_CCR, &DRV2_NPN2_CCR, &DRV2_ARR);
-    auto rightDriver = DcDriver(DRV2_PNP1_PORT, DRV2_PNP1_PIN, DRV2_PNP2_PORT, DRV2_PNP2_PIN, &rightDriverPwm);
+    auto rightDriverPwm = DcDriverPwm(&DRV_RIGHT_NPN1_CCR, &DRV_RIGHT_NPN2_CCR, &DRV_RIGHT_ARR);
+    auto rightDriver = DcDriver(DRV_RIGHT_PNP1_PORT, DRV_RIGHT_PNP1_PIN, DRV_RIGHT_PNP2_PORT, DRV_RIGHT_PNP2_PIN, &rightDriverPwm);
 
     auto carController = CarController(&leftDriver, &rightDriver);
 

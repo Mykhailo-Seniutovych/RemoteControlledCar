@@ -386,23 +386,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, MOVE_BACK_Pin|MOVE_FORWARD_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, CSN_Pin|CE_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pins : MOVE_BACK_Pin MOVE_FORWARD_Pin */
-  GPIO_InitStruct.Pin = MOVE_BACK_Pin|MOVE_FORWARD_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : CSN_Pin CE_Pin */
   GPIO_InitStruct.Pin = CSN_Pin|CE_Pin;
@@ -411,8 +400,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : DRV1_PNP1_Pin DRV1_PNP2_Pin DRV2_PNP1_Pin DRV2_PNP2_Pin */
-  GPIO_InitStruct.Pin = DRV1_PNP1_Pin|DRV1_PNP2_Pin|DRV2_PNP1_Pin|DRV2_PNP2_Pin;
+  /*Configure GPIO pins : DRV_RIGHT_PNP1_Pin DRV_RIGHT_PNP2_Pin DRV_LEFT_PNP1_Pin DRV_LEFT_PNP2_Pin */
+  GPIO_InitStruct.Pin = DRV_RIGHT_PNP1_Pin|DRV_RIGHT_PNP2_Pin|DRV_LEFT_PNP1_Pin|DRV_LEFT_PNP2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);

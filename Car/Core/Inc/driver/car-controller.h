@@ -35,10 +35,10 @@ class CarController {
     DcDriver *leftDriver_;
     DcDriver *rightDriver_;
 
-    Speed currentSpeed_ = Speed::None;
+    float currentSpeedCoefficient_ = 0;
     MovementDirection currentDirection_ = MovementDirection::None;
 
-    bool isMovementChange(MovementDirection newDirection, Speed newSpeed);
+    bool isMovementChange(MovementDirection newDirection, float speedCoefficient);
 
     inline void delayIfMoving() {
         if (currentDirection_ != MovementDirection::None) {

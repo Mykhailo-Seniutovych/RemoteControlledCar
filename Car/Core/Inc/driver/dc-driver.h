@@ -7,6 +7,7 @@
 #include "stm32f1xx_hal.h"
 
 // NPN, and PNP are abbreviations for different transistors types, used in the DC driver module.
+
 class DcDriver {
   public:
     DcDriver(
@@ -17,8 +18,8 @@ class DcDriver {
         DcDriverPwm *pwm
     );
 
-    void moveForward(Speed speed);
-    void moveBackward(Speed speed);
+    void moveForward(float speedCoefficient);
+    void moveBackward(float speedCoefficient);
     void stop();
 
   private:
