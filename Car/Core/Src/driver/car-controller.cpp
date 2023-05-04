@@ -117,8 +117,6 @@ void CarController::stop() {
     if (!isMovementChange(MovementDirection::None, 0))
         return;
 
-    delayIfMoving();
-
     leftDriver_->stop();
     rightDriver_->stop();
 
