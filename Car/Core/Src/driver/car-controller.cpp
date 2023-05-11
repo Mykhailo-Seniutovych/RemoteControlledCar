@@ -19,7 +19,7 @@ void CarController::driveForwardFast() {
     delayIfMoving();
 
     // need to adjust speed on the left wheels, because they spin slightly faster, because of some small inconsistencies in hardware
-    leftDriver_->moveForward(FAST_SPEED_COEFFICIENT * 0.96);
+    leftDriver_->moveForward(FAST_SPEED_COEFFICIENT * 0.90);
     rightDriver_->moveForward(FAST_SPEED_COEFFICIENT);
 
     currentDirection_ = MovementDirection::Forward;
@@ -31,7 +31,7 @@ void CarController::driveForwardSlow() {
 
     delayIfMoving();
 
-    leftDriver_->moveForward(SLOW_SPEED_COEFFICIENT * 0.89);
+    leftDriver_->moveForward(SLOW_SPEED_COEFFICIENT * 0.85);
     rightDriver_->moveForward(SLOW_SPEED_COEFFICIENT);
 
     currentDirection_ = MovementDirection::Forward;
@@ -44,7 +44,7 @@ void CarController::driveBackwardFast() {
 
     delayIfMoving();
 
-    leftDriver_->moveBackward(FAST_SPEED_COEFFICIENT * 0.88);
+    leftDriver_->moveBackward(FAST_SPEED_COEFFICIENT * 0.81);
     rightDriver_->moveBackward(FAST_SPEED_COEFFICIENT);
 
     currentDirection_ = MovementDirection::Backward;
@@ -56,7 +56,7 @@ void CarController::driveBackwardSlow() {
 
     delayIfMoving();
 
-    leftDriver_->moveBackward(SLOW_SPEED_COEFFICIENT * 0.87);
+    leftDriver_->moveBackward(SLOW_SPEED_COEFFICIENT * 0.83);
     rightDriver_->moveBackward(SLOW_SPEED_COEFFICIENT);
 
     currentDirection_ = MovementDirection::Backward;
