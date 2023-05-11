@@ -6,12 +6,12 @@
 struct DcDriverPwm {
     volatile uint32_t *npn1CCR;
     volatile uint32_t *npn2CCR;
-    volatile uint32_t *ARR;
+    volatile uint32_t ARR;
 
     DcDriverPwm(
         volatile uint32_t *npn1CCR,
         volatile uint32_t *npn2CCR,
-        volatile uint32_t *ARR
+        volatile uint32_t ARR
     );
 };
 

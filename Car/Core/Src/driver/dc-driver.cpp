@@ -53,10 +53,10 @@ void DcDriver::moveForward(float speedCoefficient) {
 
     // Even when the speed is slow, we still need to provide enough stall current for the motor to start first.
     // If we set the needed ARR from the beginning, most likely the motor will not start.
-    *pwm_->npn1CCR = *pwm_->ARR;
+    *pwm_->npn1CCR = pwm_->ARR;
     if (speedCoefficient < 1) {
         HAL_Delay(50);
-        *pwm_->npn1CCR = (*pwm_->ARR) * speedCoefficient;
+        *pwm_->npn1CCR = (pwm_->ARR) * speedCoefficient;
     }
 }
 
@@ -77,9 +77,9 @@ void DcDriver::moveBackward(float speedCoefficient) {
     HAL_GPIO_Init(pnp1Port_, &GPIO_InitStruct);
     HAL_GPIO_WritePin(pnp1Port_, pnp1Pin_, GPIO_PIN_RESET);
 
-    *pwm_->npn2CCR = *pwm_->ARR;
+    *pwm_->npn2CCR = pwm_->ARR;
     if (speedCoefficient < 1) {
         HAL_Delay(50);
-        *pwm_->npn2CCR = (*pwm_->ARR) * speedCoefficient;
+        *pwm_->npn2CCR = (pwm_->ARR) * speedCoefficient;
     }
 }

@@ -1,7 +1,7 @@
 #include "command-processing/command-processor.h"
 #include "led/color.h"
 
-#define MAX_IGNORED_NONE_COMMANDS 50
+#define MAX_IGNORED_NONE_COMMANDS 150
 
 const Color WhitishColor = Color(150, 255, 255);
 const Color RedColor = Color(255, 0, 0);

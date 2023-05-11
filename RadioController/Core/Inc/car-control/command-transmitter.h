@@ -1,18 +1,19 @@
-#ifndef __CAR_CONTROL_COMMAND_TRANSMITTER_H
-#define __CAR_CONTROL_COMMAND_TRANSMITTER_H
+#ifndef __CAR_CONTROL_STATE_TRANSMITTER_H
+#define __CAR_CONTROL_STATE_TRANSMITTER_H
 
-#include "car-control/car-command.h"
 #include "joystick/joystick-state.h"
+#include "car-control/car-command.h"
 #include "nrf24/nrf24.h"
 
 class CommandTransmitter {
   public:
     void initializeTransmission();
-    void transmitCommand(JoystickState rightState, JoystickState leftState);
+    void transmitCommand(const JoystickState *leftState, const JoystickState *rightState);
+    CarCommand convertIntoCommand(const JoystickState *leftState, const JoystickState *rightState) const;
 
   private:
+    bool lastTransmissionSuccess_ = false;
     CarCommand lastCmd_ = CarCommand::None;
-    bool lastCmdSuccess_ = false;
 };
 
 #endif

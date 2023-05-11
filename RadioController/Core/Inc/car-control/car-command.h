@@ -18,12 +18,13 @@ enum class CarCommand {
     TurnRightBackward = 90,
 
     TurnLeftForward = 100,
-    TurnLeftBackward = 110,
+    TurnLeftBackward = 119, // for some reason NRF has troubles to send 110, so I used 119 instead, which is sent without problems
 
     TiltUp = 120,
     TiltDown = 130,
     PanRight = 140,
     PanLeft = 150
 };
+
 
 #endif

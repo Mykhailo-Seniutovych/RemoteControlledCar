@@ -2,8 +2,7 @@
 #include "stm32f1xx_hal.h"
 
 #define ADC_RESOLUTION 4096
-#define MOVEMENT_MIN_BOUNDARY 1024
-#define MOVEMENT_MAX_BOUNDARY 3072
+
 
 #define HOR_JOYSTICK_
 
@@ -20,32 +19,15 @@ JoystickReader::JoystickReader(
 
 JoystickState JoystickReader::readState() {
     auto btnPressed = isBtnPressed();
-
     uint16_t vertAdcValue = readAdcValue(vertChannel_);
     uint16_t horAdcValue = readAdcValue(horChannel_);
 
-    // uint16_t vertScore = getScoreFromAdcValue(vertAdcValue);
-    // uint16_t horScore = getScoreFromAdcValue(horAdcValue);
+    uint16_t middleAdcValue = ADC_RESOLUTION / 2;
 
-    auto isCentralPosition =
-        horAdcValue > MOVEMENT_MIN_BOUNDARY && horAdcValue < MOVEMENT_MAX_BOUNDARY &&
-        vertAdcValue > MOVEMENT_MIN_BOUNDARY && vertAdcValue < MOVEMENT_MAX_BOUNDARY;
-
-    if (isCentralPosition) {
-        return btnPressed ? JoystickState::BtnPressed : JoystickState::None;
-    }
-
-    auto isVerticalMovement = horAdcValue > 1747 && horAdcValue < 2347;
-    JoystickState state;
-    if (isVerticalMovement) {
-        state = getVertMovementFromAdcValue(vertAdcValue);
-    } else {
-        state = getHorMovementFromAdcValue(horAdcValue, vertAdcValue);
-    }
-
-    if (btnPressed) {
-        state = state | JoystickState::BtnPressed;
-    }
+    auto state = JoystickState();
+    state.vertValue = vertAdcValue - middleAdcValue;
+    state.horValue = horAdcValue - middleAdcValue;
+    state.isBtnPressed = btnPressed;
 
     return state;
 }
@@ -62,24 +44,3 @@ uint16_t JoystickReader::readAdcValue(uint32_t channel) {
     return HAL_ADC_GetValue(adc_);
 }
 
-int16_t JoystickReader::getScoreFromAdcValue(uint16_t adcValue) {
-    if (adcValue < MOVEMENT_MIN_BOUNDARY) {
-        return MOVEMENT_MIN_BOUNDARY - adcValue;
-    }
-    if (adcValue > MOVEMENT_MAX_BOUNDARY) {
-        return adcValue - MOVEMENT_MAX_BOUNDARY;
-    }
-    return 0;
-}
-
-JoystickState JoystickReader::getVertMovementFromAdcValue(uint16_t adcValue) {
-    return adcValue > ADC_RESOLUTION / 2 ? JoystickState::Forward : JoystickState::Backward;
-}
-
-JoystickState JoystickReader::getHorMovementFromAdcValue(uint16_t horAdcValue, uint16_t vertAdcValue) {
-    auto state = horAdcValue > ADC_RESOLUTION / 2 ? JoystickState::Right : JoystickState::Left;
-    // for horizontal movement, we need to know vertical state as well, so the car can drive forward or backward when making a turn
-    auto verticalState = vertAdcValue > 1947 ? JoystickState::Forward : JoystickState::Backward;
-    state = state | verticalState;
-    return state;
-}
