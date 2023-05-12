@@ -3,9 +3,6 @@
 #include <cstdlib>
 
 #define MOVEMENT_MIN_BOUNDARY 200
-#define MOVE_STRAIGHT_MIN_VERT_HOR_DIFF 1200
-
-#define TURN_FORWARD_MIN_BOUNDARY -50
 
 void send_command(int command, void *message);
 
@@ -50,31 +47,25 @@ CarCommand CommandTransmitter::convertIntoCommand(const JoystickState *leftState
                            absRightVert > MOVEMENT_MIN_BOUNDARY;
 
     if (isRightMovement) {
-        auto isBtnPressed = rightState->isBtnPressed;
-        if (isBtnPressed) {
+        auto isRightBtnPressed = rightState->isBtnPressed;
+        auto isHorizontalMovement = absRightHor > MOVEMENT_MIN_BOUNDARY;
+
+        if (isRightBtnPressed && isHorizontalMovement) {
+            return rightState->horValue > 0 ? CarCommand::SpinRight : CarCommand::SpinLeft;
+        }
+
+        auto isLeftBtnPressed = leftState->isBtnPressed;
+        if (isLeftBtnPressed) {
             if (absRightVert > absRightHor) {
                 return rightState->vertValue > 0 ? CarCommand::MoveForwardFast : CarCommand::MoveBackwardFast;
             } else {
-                return rightState->horValue > 0 ? CarCommand::SpinRight : CarCommand::SpinLeft;
+                return rightState->horValue > 0 ? CarCommand::TurnRightBackward : CarCommand::TurnLeftBackward;
             }
-        }
-
-        if (!isBtnPressed) {
-            auto isOnlyVertMovement =
-                absRightHor < MOVEMENT_MIN_BOUNDARY ||
-                (absRightVert > MOVEMENT_MIN_BOUNDARY && absRightVert - absRightHor > MOVE_STRAIGHT_MIN_VERT_HOR_DIFF);
-
-            if (isOnlyVertMovement) {
+        } else {
+            if (absRightVert > absRightHor) {
                 return rightState->vertValue > 0 ? CarCommand::MoveForwardSlow : CarCommand::MoveBackwardSlow;
-            }
-
-            auto isSomeHorizontalMovement = !isOnlyVertMovement;
-            if (isSomeHorizontalMovement) {
-                if (rightState->horValue > 0) {
-                    return rightState->vertValue > TURN_FORWARD_MIN_BOUNDARY ? CarCommand::TurnRightForward : CarCommand::TurnRightBackward;
-                } else {
-                    return rightState->vertValue > TURN_FORWARD_MIN_BOUNDARY ? CarCommand::TurnLeftForward : CarCommand::TurnLeftBackward;
-                }
+            } else {
+                return rightState->horValue > 0 ? CarCommand::TurnRightForward : CarCommand::TurnLeftForward;
             }
         }
     }
